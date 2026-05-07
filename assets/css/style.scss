@@ -1,0 +1,14 @@
+$primaryColor: green;
+
+
+@font-face {
+    font-family: "Montserrat Alternates";
+    src: url(../fonts/MontserratAlternates-Medium.woff2) format(woff2);
+    display: swap;
+}
+
+
+h1{
+    font-family:  "Montserrat Alternates", sans-serif;
+}
+
