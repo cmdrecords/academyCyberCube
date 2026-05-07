@@ -28,6 +28,7 @@ nav {
   mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
   -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
   padding-bottom: 1dvh;
+  z-index: 50;
 }
 
 .header_title-subtitle {
