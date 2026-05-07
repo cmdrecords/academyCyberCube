@@ -9,6 +9,7 @@ $primaryColor: green;
 * {
   padding: 0;
   margin: 0;
+  font-family: "Montserrat Alternates", sans-serif;
 }
 
 h1 {
@@ -19,4 +20,16 @@ nav {
   width: 100%;
   height: 10dvh;
   border: 2px solid red;
+}
+
+#hero {
+  background:
+    radial-gradient(circle at top, rgba(0, 255, 102, 0.1), transparent 40%),
+    linear-gradient(180deg, #071007 0%, #020402 100%);
+  height: 100dvh;
+}
+
+.hero-inner {
+  width: 100%;
+  height: 100dvh;
 }
