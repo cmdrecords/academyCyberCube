@@ -66,6 +66,7 @@ nav {
   font-size: 18px;
   color: #7ef07e;
   transition: 0.4s;
+  text-decoration: none;
 }
 .menu_button:hover {
   cursor: pointer;
@@ -267,7 +268,7 @@ nav {
   perspective: 1200px;
   display: flex;
   justify-content: center;
-  transform: scale(1.5);
+  transform: scale(1.6);
 }
 
 .cube {
