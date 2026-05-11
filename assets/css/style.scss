@@ -22,7 +22,7 @@ $primaryColor: green;
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  gap: 25px;
+  gap: 50px;
 }
 
 .study h2 {
@@ -33,8 +33,10 @@ $primaryColor: green;
 
 .study_enclosure-block {
   width: 90%;
-  height: 100%;
-  border: 2px solid red;
+  height: 72.5%;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
 }
 
 .enclosure-block_technology-enclosure-block {
@@ -43,7 +45,6 @@ $primaryColor: green;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 2px solid red;
   gap: 20px;
 }
 
@@ -58,7 +59,7 @@ $primaryColor: green;
 
 .technology_logo {
   width: 12.5%;
-  height: 17.5%;
+  height: 22.5%;
   border: 2px solid #7ef07e;
   box-shadow:
     rgba(0, 255, 102, 0.22) 0px 0px 18px,
@@ -80,6 +81,11 @@ $primaryColor: green;
   gap: 5px;
 }
 
+.technology_description-right {
+  text-align: right;
+  align-items: end;
+}
+
 .technology_description h2 {
   color: white;
   font-size: 42.5px;
@@ -97,6 +103,7 @@ $primaryColor: green;
   color: white;
   font-size: 20px;
   font-weight: 500;
+  margin-top: 6px;
 }
 
 .description_ul-list {
@@ -113,8 +120,60 @@ $primaryColor: green;
   margin-right: 8px;
 }
 
+.description_right-ul-list span {
+  margin-left: 8px;
+  margin-right: 0px;
+}
+
 .technology-enclosure-block_technology-code {
   width: 50%;
   height: 100%;
-  border: 2px solid red;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow:
+    rgba(0, 255, 102, 0.22) 0px 0px 18px,
+    rgba(0, 255, 102, 0.12) 0px 0px 42px;
+  border: 1px solid rgba(#7ef07e, 0.5);
+}
+
+.technology-code_header {
+  width: 100%;
+  height: 12.5%;
+  background: #051f20;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 8px;
+  padding-left: 20px;
+  border-bottom: 2px solid #071007;
+}
+
+.header_round {
+  width: 2.25%;
+  height: 32.5%;
+  border-radius: 50%;
+}
+
+.header_round:nth-of-type(1) {
+  background: #f87171;
+}
+
+.header_round:nth-of-type(2) {
+  background: #fbbf24;
+}
+
+.header_round:nth-of-type(3) {
+  background: #34d399;
+}
+
+.technology-code_code {
+  width: 100%;
+  height: 90%;
+  background: #041818;
+  padding: 15px 25px 15px 25px;
+  color: white;
+}
+
+.code_text {
+  font-size: 22px;
 }
