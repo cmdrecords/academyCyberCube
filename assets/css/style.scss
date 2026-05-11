@@ -1,14 +1,19 @@
 $primaryColor: green;
 
-
 @font-face {
-    font-family: "Montserrat Alternates";
-    src: url(../fonts/MontserratAlternates-Medium.woff2) format(woff2);
-    display: swap;
+  font-family: "Montserrat Alternates";
+  src: url(../fonts/MontserratAlternates-Medium.woff2) format(woff2);
+  display: swap;
 }
 
-
-h1{
-    font-family:  "Montserrat Alternates", sans-serif;
+h1 {
+  font-family: "Montserrat Alternates", sans-serif;
 }
 
+.study {
+  width: 100%;
+  height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(0, 255, 102, 0.1), transparent 40%),
+    linear-gradient(180deg, #071007 0%, #020402 100%);
+}
