@@ -14,7 +14,7 @@ $primaryColor: green;
 
 .study {
   width: 100%;
-  height: 100dvh;
+  height: 175dvh;
   background:
     radial-gradient(circle at top, rgba(0, 255, 102, 0.1), transparent 40%),
     linear-gradient(180deg, #071007 0%, #020402 100%);
@@ -22,11 +22,99 @@ $primaryColor: green;
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  gap: 15px;
+  gap: 25px;
 }
 
 .study h2 {
   font-size: 50px;
   color: white;
   margin-top: 20px;
+}
+
+.study_enclosure-block {
+  width: 90%;
+  height: 100%;
+  border: 2px solid red;
+}
+
+.enclosure-block_technology-enclosure-block {
+  width: 100%;
+  height: 33%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid red;
+  gap: 20px;
+}
+
+.technology-enclosure-block_technology {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  gap: 30px;
+}
+
+.technology_logo {
+  width: 12.5%;
+  height: 17.5%;
+  border: 2px solid #7ef07e;
+  box-shadow:
+    rgba(0, 255, 102, 0.22) 0px 0px 18px,
+    rgba(0, 255, 102, 0.12) 0px 0px 42px;
+  border-radius: 10px;
+  background: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.technology_description {
+  width: 87.5%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 5px;
+}
+
+.technology_description h2 {
+  color: white;
+  font-size: 42.5px;
+  margin: 0;
+}
+
+.technology_description h2 span {
+  color: #7cff9a;
+  text-shadow: rgba(0, 255, 102, 0.75) 0px 0px 10px;
+  font-size: 42.5px;
+  margin: 0;
+}
+
+.technology_description h3 {
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.description_ul-list {
+  color: white;
+  margin: 0px 0px 10px 0px;
+  font-size: 20px;
+  list-style-type: none;
+}
+
+.description_ul-list span {
+  font-size: 14px;
+  color: #7cff9a;
+  font-weight: 400;
+  margin-right: 8px;
+}
+
+.technology-enclosure-block_technology-code {
+  width: 50%;
+  height: 100%;
+  border: 2px solid red;
 }
