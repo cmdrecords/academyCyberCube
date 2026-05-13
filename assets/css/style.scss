@@ -22,5 +22,46 @@ $primaryColor: green;
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  gap: 50px;
+  gap: 25px;
+}
+
+.courses-page h2 {
+  font-size: 40px;
+  color: white;
+  margin-top: 20px;
+}
+
+.courses-page_enclosure-block {
+  width: 75%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 50%);
+  gap: 25px;
+}
+
+.course-block_course-header {
+  width: 100%;
+  height: 20%;
+  border: 2px solid red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.course-icon {
+  width: 25%;
+  height: 75%;
+  border: 2px solid red;
+}
+
+.enclosure-block_course-block {
+  background: rgba(#7ef07e, 0.1);
+  box-shadow:
+    0 0 15px rgba(0, 255, 102, 0.22),
+    0 0 15px rgba(0, 255, 102, 0.12);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
 }
