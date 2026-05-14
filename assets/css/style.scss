@@ -14,7 +14,7 @@ $primaryColor: green;
 
 .courses-page {
   width: 100%;
-  height: 125dvh;
+  height: 135dvh;
   background:
     radial-gradient(circle at top, rgba(0, 255, 102, 0.1), transparent 40%),
     linear-gradient(180deg, #071007 0%, #020402 100%);
@@ -33,26 +33,27 @@ $primaryColor: green;
 
 .courses-page_enclosure-block {
   width: 75%;
-  height: 100%;
+  height: 85%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 50%);
   gap: 25px;
 }
 
-.course-block_course-header {
+.course-block_header {
   width: 100%;
   height: 30%;
-  border: 2px solid red;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: start;
   align-items: start;
+  gap: 8px;
+  border-bottom: 1px solid #7ef07e;
 }
 
 .course-header_course-icon {
-  width: 22.5%;
-  height: 50%;
+  width: 20%;
+  height: 47.5%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,6 +61,7 @@ $primaryColor: green;
   box-shadow:
     0 0 15px rgba(0, 255, 102, 0.22),
     0 0 15px rgba(0, 255, 102, 0.12);
+  border: 1px solid #7ef07e;
 }
 
 .enclosure-block_course-block {
@@ -72,4 +74,70 @@ $primaryColor: green;
   justify-content: start;
   align-items: start;
   padding: 15px;
+  border: 1px solid rgba(#7ef07e, 0.5);
+  border-radius: 10px;
+}
+
+.course-header_course-title {
+  color: white;
+  font-size: 27px;
+}
+
+.course-header_course-level {
+  color: rgba(#7ef07e, 0.5);
+}
+
+.course-block_content {
+  width: 100%;
+  height: 50%;
+}
+
+.course-features_list {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  list-style-type: none;
+  margin-top: 12px;
+}
+
+.course-block_footer {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: start;
+  gap: 10px;
+}
+
+.footer_course-price {
+  color: #7ef07e;
+  font-size: 28px;
+}
+
+.footer_course-price span {
+  font-size: 18px;
+}
+
+.footer_button-sign-up {
+  width: 100%;
+  height: 42.5%;
+  background: #539e53;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  text-decoration: none;
+  border-radius: 0px 15px 15px 15px;
+  transition: 0.4s;
+  &:hover {
+    box-shadow:
+      rgba(0, 255, 102, 0.22) 0px 0px 18px,
+      rgba(0, 255, 102, 0.12) 0px 0px 42px;
+    font-size: 19px;
+    border-radius: 30px;
+  }
 }
