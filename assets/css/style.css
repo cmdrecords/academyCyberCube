@@ -37,17 +37,22 @@
 
 .course-block_course-header {
   width: 100%;
-  height: 20%;
+  height: 30%;
   border: 2px solid red;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
 }
 
-.course-icon {
-  width: 25%;
-  height: 75%;
-  border: 2px solid red;
+.course-header_course-icon {
+  width: 22.5%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 255, 102, 0.22), 0 0 15px rgba(0, 255, 102, 0.12);
 }
 
 .enclosure-block_course-block {
@@ -57,4 +62,5 @@
   flex-direction: column;
   justify-content: start;
   align-items: start;
+  padding: 15px;
 }/*# sourceMappingURL=style.css.map */
