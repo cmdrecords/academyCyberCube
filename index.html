@@ -4,13 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Академия программирования КиберКуб</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
   </head>
   <body>
     <section id="courses">
       <div class="courses-page">
         <h2>Наши курсы</h2>
-        <div class="courses-page_enclosure-block">
+        <div class="courses-page_enclosure-block" data-aos="fade-up" data-aos-duration="1500">
           <div class="enclosure-block_course-block">
             <div class="course-block_header">
               <div class="course-header_course-icon">
@@ -289,5 +290,9 @@
         </div>
       </div>
     </section>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+    AOS.init();
+  </script>
   </body>
 </html>
