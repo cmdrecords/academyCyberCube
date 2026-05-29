@@ -14,7 +14,7 @@ $primaryColor: green;
 
 .learning-process {
   width: 100%;
-  height: 105dvh;
+  height: calc(100dvh - 20px);
   background:
     radial-gradient(circle at top, rgba(0, 255, 102, 0.1), transparent 40%),
     linear-gradient(180deg, #071007 0%, #020402 100%);
@@ -38,48 +38,86 @@ $primaryColor: green;
 
 .learning-process_process-line {
   width: 60%;
-  height: 2.75%;
-  position: relative;
+  height: 1%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 15px;
   margin-bottom: 10px;
+  background: #284e28;
+  border-radius: 25px;
+  border: 1px solid black;
 }
 
 .process-line_line {
-  width: 100%;
-  height: 20%;
+  width: 20%;
+  height: 100%;
   background: #7ef07e;
   border-radius: 25px;
-  position: absolute;
+  border: 1px solid black;
+  transition: 0.8s;
 }
 
-.process-line_round {
-  width: 25px;
-  height: 25px;
-  background: #7ef07e;
-  border-radius: 50%;
-  border: 2px solid black;
-  box-shadow: rgba(0, 0, 0, 0.75) 0px 0px 10px;
-  z-index: 10;
+.learning-process_durations {
+  width: 68%;
+  height: 4%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.durations_stage-duration {
+  width: 10%;
+  height: 100%;
+  background: rgba(#7ef07e, 0.5);
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1px 14px 1px 14px;
+  border: 1px solid black;
+  color: white;
+  font-weight: 600;
+  transition: 0.4s;
+  margin-top: 8px;
+  &:hover {
+    background: transparent;
+    border: 2px solid #7ef07e;
+    cursor: pointer;
+  }
+}
+
+.durations_active {
+  background: transparent;
+  border: 2px solid #7ef07e;
+  box-shadow:
+    rgba(0, 255, 102, 0.22) 0px 0px 18px,
+    rgba(0, 255, 102, 0.12) 0px 0px 42px;
 }
 
 .learning-process_process-timeline {
   width: 85%;
-  height: 43%;
+  height: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 24px;
+  margin: 20px 0px 30px 0px;
+  transition: 0.4s;
 }
 
 .process-timeline_stage-card {
-  width: 33%;
+  width: 100%;
+  height: auto;
   border: 2px solid #7ef07e;
   border-radius: 28px;
   padding: 28px 24px;
   transition: 0.4s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 15px;
   box-shadow:
     rgba(0, 255, 102, 0.22) 0px 0px 18px,
     rgba(0, 255, 102, 0.12) 0px 0px 42px;
@@ -89,50 +127,61 @@ $primaryColor: green;
   }
 }
 
-.stage-card_stage-number {
-  display: inline-block;
-  font-weight: 600;
-  font-size: 14px;
-  background: rgba(#7ef07e, 0.5);
-  padding: 4px 12px;
-  border-radius: 40px;
-  letter-spacing: 0.3px;
-  margin-bottom: 20px;
+.d-none {
+  display: none;
 }
 
-.stage-card_stage-title {
+.stage-card_header {
+  width: auto;
+  height: 30%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #7ef07e;
+}
+
+.header_stage-title {
   font-size: 26px;
   font-weight: 700;
-  margin-bottom: 12px;
   line-height: 1.3;
 }
 
-.stage-card_stage-duration {
+.header_stage-duration {
   font-size: 14px;
   font-weight: 600;
   background: rgba(#7ef07e, 0.5);
   display: inline-block;
   padding: 4px 12px;
   border-radius: 30px;
-  margin-bottom: 20px;
 }
 
 .stage-card_stage-description {
+  width: 90%;
   font-size: 17px;
   font-weight: 500;
-  margin-bottom: 24px;
   line-height: 1.45;
 }
 
 .stage-card_stage-list {
   list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
 .stage-card_stage-list li {
+  background: rgba(#7ef07e, 0.5);
+  border-radius: 15px;
+  padding: 5px 15px 5px 15px;
   font-size: 15px;
-  margin-bottom: 12px;
   position: relative;
   line-height: 1.4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
 }
 
 .stage-card_stage-list li span {
@@ -145,7 +194,7 @@ $primaryColor: green;
   width: 80.5%;
   border-radius: 28px;
   padding: 32px 36px;
-  margin: 32px 0 40px;
+  margin-bottom: 30px;
   border: 2px solid #7ef07e;
   box-shadow:
     rgba(0, 255, 102, 0.22) 0px 0px 18px,
