@@ -136,6 +136,7 @@ $primaryColor: green;
   color: white;
   &:hover {
     transform: scale(1.01);
+    cursor: default;
   }
 }
 

@@ -129,6 +129,7 @@
 }
 .process-timeline_stage-card:hover {
   transform: scale(1.01);
+  cursor: default;
 }
 
 .d-none {
