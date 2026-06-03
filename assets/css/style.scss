@@ -1,14 +1,119 @@
 $primaryColor: green;
 
-
 @font-face {
-    font-family: "Montserrat Alternates";
-    src: url(../fonts/MontserratAlternates-Medium.woff2) format(woff2);
-    display: swap;
+  font-family: "Montserrat Alternates";
+  src: url(../fonts/MontserratAlternates-Medium.woff2) format(woff2);
+  display: swap;
 }
 
-
-h1{
-    font-family:  "Montserrat Alternates", sans-serif;
+* {
+  font-family: "Montserrat Alternates", sans-serif;
+  padding: 0;
+  margin: 0;
 }
 
+.sign-up {
+  width: 100%;
+  height: 75dvh;
+  background:
+    radial-gradient(circle at top, rgba(0, 255, 102, 0.1), transparent 40%),
+    linear-gradient(180deg, #071007 0%, #020402 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign-up_form {
+  width: 35%;
+  height: 75%;
+  background: rgba(#7ef07e, 0.1);
+  border-radius: 15px;
+  padding: 25px;
+  border: 1px solid #7ef07e;
+  box-shadow:
+    rgba(0, 255, 102, 0.22) 0px 0px 18px,
+    rgba(0, 255, 102, 0.12) 0px 0px 42px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 5px;
+  color: #7ef07e;
+}
+
+.sign-up_form h2 {
+  font-size: 50px;
+  letter-spacing: 7px;
+  text-align: center;
+  background: linear-gradient(135deg, #aafdaa, #7ef07e, #3d753d);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.sign-up_form h3 {
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 7px;
+}
+
+.form_input-container {
+  width: 85%;
+  height: 9%;
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  border: 2px solid #7ef07e;
+  border-radius: 50px;
+  padding: 5px 25px 5px 25px;
+  box-shadow: inset 0px 0px 20px black;
+}
+
+.input-container_input {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  background: none;
+  color: #7ef07e;
+  font-size: 18px;
+  border: none;
+}
+
+.input-container_input::placeholder {
+  color: rgba(#7ef07e, 0.5);
+}
+
+.form_button {
+  width: 95%;
+  height: 11%;
+  background: #7ef07e;
+  border: 2px solid #7ef07e;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: black;
+  transition: 0.4s;
+  margin-top: 25px;
+  box-shadow: inset 0px 0px 20px black;
+  &:hover {
+    cursor: pointer;
+    color: #7ef07e;
+    background: transparent;
+  }
+}
+
+.name-icon {
+  transition: 0.4s;
+}
+
+.phone-icon {
+  transition: 0.4s;
+}
