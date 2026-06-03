@@ -26,14 +26,13 @@ $primaryColor: green;
 
 .contacts_info-container {
   width: 40%;
-  height: 60%;
-  border: 2px solid red;
+  height: 65%;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: start;
-  gap: 8px;
+  gap: 15px;
 }
 
 .contacts_info-container h2 {
@@ -41,18 +40,97 @@ $primaryColor: green;
 }
 
 .info-container_info-block {
-  width: calc(100% - 30px);
-  height: calc(40% - 30px);
-  padding: 15px;
-  border: 2px solid #7ef07e;
+  width: calc(auto - 50px);
+  height: calc(18% - 50px);
+  padding: 25px;
+  border: 1px solid #7ef07e;
+  box-shadow:
+    rgba(0, 255, 102, 0.22) 0px 0px 18px,
+    rgba(0, 255, 102, 0.12) 0px 0px 42px;
   border-radius: 15px;
   display: flex;
-  justify-content: space-between;
+  justify-content: start;
+  align-items: center;
+  gap: 15px;
+}
+
+.info-block_img-bg {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 2px solid #7ef07e;
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 
-.contacts_card {
+.info-container_info-block h3 {
+  font-size: 26px;
+  color: lightgrey;
+}
+
+.info-block_address-block {
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 8px;
+}
+
+.info-block_address-block h3 {
+  font-size: 19px;
+}
+
+.info-block_btn-to-max {
+  padding: 8px 20px 8px 20px;
+  background: none;
+  color: #7ef07e;
+  border: 2px solid #7ef07e;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  transition: 0.4s;
+  text-decoration: none;
+  &:hover {
+    color: black;
+    background: #7ef07e;
+    cursor: pointer;
+  }
+}
+
+.contacts_map {
   width: 40%;
-  height: 70%;
-  border: 2px solid red;
+  height: 465px;
+  border-radius: 28px;
+  background: #000;
+  box-shadow:
+    0 25px 40px -12px rgba(0, 0, 0, 0.6),
+    0 0 0 2px #7ef07e,
+    0 0 0 8px rgba(126, 240, 126, 0.2),
+    inset 0 2px 5px rgba(255, 255, 255, 0.1);
+}
+
+.leaflet-control-zoom a {
+  background: black !important;
+  color: #7ef07e !important;
+  border: 2px solid white !important;
+}
+
+.leaflet-popup-content-wrapper {
+  background: black !important;
+  color: #7ef07e !important;
+  border: 2px solid white !important;
+}
+
+.leaflet-control-attribution {
+  background: black !important;
+  color: #7ef07e !important;
+  border: 1px solid white !important;
+}
+
+/* Улицы видны отлично */
+.leaflet-tile-pane {
+  filter: brightness(0.9) contrast(1.1) !important;
 }

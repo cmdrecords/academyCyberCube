@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
     <title>Академия программирования КиберКуб</title>
   </head>
@@ -12,14 +14,37 @@
         <div class="contacts_info-container">
           <h2>Связь с нами</h2>
           <div class="info-container_info-block">
-            <img src="/assets/images/phone.png" width="75px" height="75px"></img>
+            <div class="info-block_img-bg">
+              <img src="/assets/images/phone.png" width="35px" height="35px"></img>
+            </div>
+            <h3>+7 (918) 013-21-42</h3>
           </div>
           <div class="info-container_info-block">
-            <img src="/assets/images/phone.png" width="75px" height="75px"></img>
+            <div class="info-block_img-bg">
+              <img src="/assets/images/point.png" width="40px" height="40px"></img>
+            </div>
+            <div class="info-block_address-block">
+              <h3>г. Краснодар улица им. Мурата Ахеджака, 10А</h3>
+              <h3>г. Краснодар улица им. Пушкина, д. Колотушкина</h3>
+            </div>
+          </div>
+          <div class="info-container_info-block">
+            <div class="info-block_img-bg">
+              <img src="/assets/images/mail.png" width="30px" height="30px"></img>
+            </div>
+            <h3>cybercubekrd@mail.ru</h3>
+          </div>
+          <div class="info-container_info-block">
+            <div class="info-block_img-bg">
+              <img src="/assets/images/max.png" width="35px" height="35px"></img>
+            </div>
+            <a href="" class="info-block_btn-to-max">Перейти в MAX</a>
           </div>
         </div>
-        <div class="contacts_card"></div>
+        <div id="map" class="contacts_map"></div>
       </div>
     </section>
+
+    <script src="/assets//js/app.js"></script>
   </body>
 </html>
