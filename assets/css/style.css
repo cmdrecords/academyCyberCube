@@ -113,4 +113,12 @@
 
 .phone-icon {
   transition: 0.4s;
+}
+
+.status {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 18px;
+  color: #7ef07e;
+  font-weight: 700;
 }/*# sourceMappingURL=style.css.map */
