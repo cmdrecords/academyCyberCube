@@ -41,8 +41,7 @@ nav {
 
 .header_title-subtitle > h1 {
   color: #b8ffb8;
-  text-shadow:
-    0 0 18px rgba(0, 255, 102, 0.22),
+  text-shadow: 0 0 18px rgba(0, 255, 102, 0.22),
     0 0 42px rgba(0, 255, 102, 0.12);
   font-weight: 800;
   font-size: 35px;
@@ -74,8 +73,7 @@ nav {
   &:hover {
     cursor: pointer;
     color: #b8ffb8;
-    text-shadow:
-      0 0 18px rgba(0, 255, 102, 0.22),
+    text-shadow: 0 0 18px rgba(0, 255, 102, 0.22),
       0 0 42px rgba(0, 255, 102, 0.12);
   }
 }
@@ -94,10 +92,8 @@ nav {
   border-radius: 18px;
   background: linear-gradient(135deg, #061306 0%, #0a2a10 100%);
   border: 1px solid rgba(0, 255, 102, 0.5);
-  box-shadow:
-    inset 0 0 18px rgba(0, 255, 102, 0.08),
-    0 0 18px rgba(0, 255, 102, 0.22),
-    0 0 42px rgba(0, 255, 102, 0.12);
+  box-shadow: inset 0 0 18px rgba(0, 255, 102, 0.08),
+    0 0 18px rgba(0, 255, 102, 0.22), 0 0 42px rgba(0, 255, 102, 0.12);
   position: relative;
   overflow: hidden;
 }
@@ -215,8 +211,11 @@ nav {
 }
 
 #hero {
-  background:
-    radial-gradient(circle at top, rgba(0, 255, 102, 0.1), transparent 40%),
+  background: radial-gradient(
+      circle at top,
+      rgba(0, 255, 102, 0.1),
+      transparent 40%
+    ),
     linear-gradient(180deg, #071007 0%, #020402 100%);
   height: 200dvh;
 }
@@ -270,9 +269,7 @@ nav {
   color: #031203;
   font-size: 18px;
   font-weight: bold;
-  box-shadow:
-    0 0 18px rgba(0, 255, 102, 0.22),
-    0 0 42px rgba(0, 255, 102, 0.12);
+  box-shadow: 0 0 18px rgba(0, 255, 102, 0.22), 0 0 42px rgba(0, 255, 102, 0.12);
   transition: 0.4s;
   margin-top: 5px;
   &:hover {
@@ -317,8 +314,7 @@ nav {
     rgba(5, 20, 5, 0.95) 0%,
     rgba(10, 45, 10, 0.92) 100%
   );
-  box-shadow:
-    inset 0 0 22px rgba(0, 255, 102, 0.08),
+  box-shadow: inset 0 0 22px rgba(0, 255, 102, 0.08),
     0 0 18px rgba(0, 255, 102, 0.08);
   backface-visibility: hidden;
   font-weight: 800;
@@ -405,5 +401,293 @@ nav {
   100% {
     transform: translateY(100px);
     opacity: 0;
+  }
+}
+
+/* ===== МЕДИАЗАПРОСЫ ДЛЯ АДАПТАЦИИ ===== */
+
+/* Ноутбуки и маленькие экраны (1024px - 1200px) */
+@media (max-width: 1200px) {
+  nav {
+    gap: 30px;
+    padding: 0 20px;
+    flex-direction: column;
+  }
+
+  .floating-computer,
+  .main-inner_cube {
+    display: none;
+  }
+
+  .header_title-subtitle > h1 {
+    font-size: 28px;
+  }
+
+  .header_title-subtitle > h2 {
+    font-size: 14px;
+  }
+
+  .header_menu {
+    gap: 10px;
+  }
+
+  .menu_button {
+    font-size: 16px;
+  }
+
+  .main-inner_title-subtitle > h2 {
+    font-size: 55px;
+  }
+
+  .main-inner_title-subtitle > h3 {
+    font-size: 18px;
+    line-height: 30px;
+  }
+}
+
+/* Планшеты и маленькие ноутбуки (768px - 1024px) */
+@media (max-width: 1024px) {
+  nav {
+    flex-wrap: wrap;
+    height: auto;
+    min-height: 10dvh;
+    padding: 15px 20px;
+    gap: 20px;
+    justify-content: space-between;
+  }
+
+  .header_title-subtitle {
+    gap: 5px;
+  }
+
+  .header_title-subtitle > h1 {
+    font-size: 24px;
+  }
+
+  .header_title-subtitle > h2 {
+    font-size: 12px;
+  }
+
+  .header_menu {
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .menu_button {
+    font-size: 14px;
+    padding: 5px 10px;
+  }
+
+  .main-inner {
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    padding-top: 80px;
+  }
+
+  .main-inner_title-subtitle {
+    width: 80%;
+    height: auto;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .main-inner_title-subtitle > h2 {
+    font-size: 45px;
+  }
+
+  .main-inner_title-subtitle > h3 {
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  .title-subtitle_button {
+    padding: 18px 30px;
+    font-size: 16px;
+  }
+}
+
+/* Мобильные устройства (480px - 768px) */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 15px;
+    min-height: 8dvh;
+  }
+
+  .header_title-subtitle {
+    align-items: center;
+    gap: 3px;
+  }
+
+  .header_title-subtitle > h1 {
+    font-size: 20px;
+  }
+
+  .header_title-subtitle > h2 {
+    font-size: 10px;
+  }
+
+  .header_menu {
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .menu_button {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+
+  #hero {
+    height: 100dvh;
+  }
+
+  .main-inner {
+    padding-top: 100px;
+    gap: 20px;
+    justify-content: flex-start;
+  }
+
+  .main-inner_title-subtitle {
+    width: 90%;
+    gap: 12px;
+  }
+
+  .main-inner_title-subtitle > h2 {
+    font-size: 32px;
+  }
+
+  .main-inner_title-subtitle > h3 {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .title-subtitle_button {
+    padding: 14px 25px;
+    font-size: 14px;
+  }
+}
+
+/* Маленькие мобильные устройства (320px - 480px) */
+@media (max-width: 480px) {
+  nav {
+    padding: 8px 10px;
+    gap: 8px;
+  }
+
+  .header_title-subtitle > h1 {
+    font-size: 16px;
+  }
+
+  .header_title-subtitle > h2 {
+    font-size: 9px;
+  }
+
+  .menu_button {
+    font-size: 10px;
+    padding: 3px 6px;
+  }
+
+  .main-inner {
+    padding-top: 90px;
+    gap: 15px;
+  }
+
+  .main-inner_title-subtitle {
+    width: 95%;
+    gap: 10px;
+  }
+
+  .main-inner_title-subtitle > h2 {
+    font-size: 24px;
+  }
+
+  .main-inner_title-subtitle > h3 {
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  .title-subtitle_button {
+    padding: 12px 20px;
+    font-size: 12px;
+  }
+}
+
+/* Очень маленькие экраны (< 320px) */
+@media (max-width: 320px) {
+  .header_title-subtitle > h1 {
+    font-size: 14px;
+  }
+
+  .header_title-subtitle > h2 {
+    font-size: 8px;
+  }
+
+  .menu_button {
+    font-size: 9px;
+    padding: 2px 5px;
+  }
+
+  .main-inner_title-subtitle > h2 {
+    font-size: 20px;
+  }
+
+  .main-inner_title-subtitle > h3 {
+    font-size: 11px;
+    line-height: 18px;
+  }
+
+  .title-subtitle_button {
+    padding: 10px 16px;
+    font-size: 11px;
+  }
+}
+
+/* Альбомная ориентация на мобильных */
+@media (max-height: 500px) and (orientation: landscape) {
+  .main-inner {
+    padding-top: 80px;
+    gap: 15px;
+  }
+
+  .main-inner_title-subtitle {
+    width: 80%;
+    height: auto;
+  }
+
+  .main-inner_title-subtitle > h2 {
+    font-size: 28px;
+  }
+
+  .main-inner_title-subtitle > h3 {
+    font-size: 13px;
+    line-height: 20px;
+  }
+
+  .title-subtitle_button {
+    padding: 14px 22px;
+    font-size: 13px;
+  }
+
+  nav {
+    min-height: 6dvh;
+    padding: 5px 15px;
+  }
+
+  .header_title-subtitle > h1 {
+    font-size: 18px;
+  }
+
+  .header_title-subtitle > h2 {
+    font-size: 10px;
+  }
+
+  .menu_button {
+    font-size: 11px;
+    padding: 3px 8px;
   }
 }
