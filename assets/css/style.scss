@@ -115,7 +115,15 @@ $primaryColor: green;
 }
 .process-timeline_part:nth-of-type(2) {
   width: 55%;
-  border: 2px solid red;
+  background-image: url("../images/1-year-technologies.png");
+  background-size: 800px 1050px;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  filter: brightness(85%);
+  animation: imageAnimation;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
 }
 
 .process-timeline_stage-card {
@@ -375,4 +383,23 @@ $primaryColor: green;
   font-size: 16px;
   color: #7ef07e;
   text-align: center;
+}
+
+@keyframes imageAnimation {
+  0%,
+  100% {
+    top: -20px;
+    left: 30px;
+    transform: rotate(5deg);
+  }
+  47% {
+    top: 80px;
+    left: 30px;
+    transform: rotate(-5deg);
+  }
+  52% {
+    top: 80px;
+    left: 30px;
+    transform: rotate(-5deg);
+  }
 }
