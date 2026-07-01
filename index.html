@@ -4,13 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Академия программирования КиберКуб</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
   </head>
   <body>
     <section id="courses">
       <div class="courses-page">
         <h2>Наши курсы</h2>
-        <div class="courses-page_enclosure-block">
+        <div class="courses-page_enclosure-block" data-aos="fade-up" data-aos-duration="1500">
           <div class="enclosure-block_course-block">
             <div class="course-block_header">
               <div class="course-header_course-icon">
@@ -62,14 +63,14 @@
               <div class="course-header_course-icon">
                 <img src="./assets/images/settings.png" width="55px" height="55px"></img>
               </div>
-              <h3 class="course-header_course-title">Основы C++</h3>
+              <h3 class="course-header_course-title">Основы C++ / C#</h3>
               <span class="course-header_course-level">Средний уровень</span>
             </div>
             <div class="course-block_content">
               <ul class="course-content_course-features">
                 <li class="course-features_list">
                   <img src="./assets/images/check.png" width="25px" height="25px"></img>
-                  Основы синтаксиса C++
+                  Основы синтаксиса C++ / C#
                 </li>
                 <li class="course-features_list">
                   <img src="./assets/images/check.png" width="25px" height="25px"></img>
@@ -77,7 +78,7 @@
                 </li>
                 <li class="course-features_list">
                   <img src="./assets/images/check.png" width="25px" height="25px"></img>
-                  Работа с памятью и указатели
+                  Разработка игр и программ
                 </li>
                 <li class="course-features_list">
                   <img src="./assets/images/check.png" width="25px" height="25px"></img>
@@ -93,7 +94,7 @@
                 </li>
                 <li class="course-features_list">
                   <img src="./assets/images/check.png" width="25px" height="25px"></img>
-                  Разработка игр на SMFL
+                  Работа с памятью и указателями
                 </li>
               </ul>
             </div>
@@ -236,7 +237,7 @@
               </ul>
             </div>
             <div class="course-block_footer">
-              <div class="footer_course-price">5 500 <span>руб.</span></div>
+              <div class="footer_course-price">6 500 <span>руб.</span></div>
               <a href="#" class="footer_button-sign-up">Записаться</a>
             </div>
           </div>
@@ -246,7 +247,7 @@
               <div class="course-header_course-icon">
                 <img src="./assets/images/laptop-coding.png" width="55px" height="55px"></img>
               </div>
-              <h3 class="course-header_course-title">Базовый IT-курс</h3>
+              <h3 class="course-header_course-title">Работа с ИИ</h3>
               <span class="course-header_course-level">Для начинающих</span>
             </div>
             <div class="course-block_content">
@@ -282,7 +283,7 @@
               </ul>
             </div>
             <div class="course-block_footer">
-              <div class="footer_course-price">5 500 <span>руб.</span></div>
+              <div class="footer_course-price">6 500 <span>руб.</span></div>
               <a href="#" class="footer_button-sign-up">Записаться</a>
             </div>
           </div>
@@ -295,5 +296,9 @@
     </section>
 
     <script src="./assets/js/app.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+    AOS.init();
+  </script>
   </body>
 </html>
