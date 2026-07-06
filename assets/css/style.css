@@ -204,9 +204,40 @@
   background: linear-gradient(to left, #396d39, transparent);
 }
 
+@media (max-width: 1200px) {
+  .courses-page {
+    height: 185dvh;
+  }
+  .courses-page_enclosure-block {
+    width: 90%;
+    height: 80%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+  .course-block_footer {
+    margin-top: 25px;
+  }
+  .technologies-block {
+    width: 90%;
+    height: auto;
+    position: relative;
+    top: 7%;
+  }
+  .slide {
+    width: 50px;
+    height: 50px;
+  }
+  .footer_button-sign-up {
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+  .course-block_header {
+    padding-bottom: 5px;
+  }
+}
 @media (max-width: 768px) {
   .courses-page {
-    height: 350dvh;
+    height: 347.5dvh;
   }
   .course-block_header {
     padding-bottom: 5px;
@@ -222,6 +253,9 @@
   }
   .course-block_footer {
     margin-top: 25px;
+  }
+  .footer_button-sign-up {
+    height: 60%;
   }
   .slide img {
     width: 50px;
