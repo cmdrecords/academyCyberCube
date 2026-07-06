@@ -407,43 +407,44 @@ nav {
 /* ===== МЕДИАЗАПРОСЫ ДЛЯ АДАПТАЦИИ ===== */
 
 /* Ноутбуки и маленькие экраны (1024px - 1200px) */
-@media (max-width: 1200px) {
-  nav {
-    gap: 30px;
-    padding: 0 20px;
-    flex-direction: column;
-  }
+// @media (max-width: 1200px) {
+//   nav {
+//     gap: 30px;
+//     padding: 0 20px;
+//     flex-direction: column;
+//   }
 
-  .floating-computer,
-  .main-inner_cube {
-    display: none;
-  }
+//   .floating-computer,
+//   .main-inner_cube {
+//     display: none;
+//   }
 
-  .header_title-subtitle > h1 {
-    font-size: 28px;
-  }
+//   .header_title-subtitle > h1 {
+//     font-size: 38px;
+//     text-align: center;
+//   }
 
-  .header_title-subtitle > h2 {
-    font-size: 14px;
-  }
+//   .header_title-subtitle > h2 {
+//     font-size: 14px;
+//   }
 
-  .header_menu {
-    gap: 10px;
-  }
+//   .header_menu {
+//     gap: 10px;
+//   }
 
-  .menu_button {
-    font-size: 16px;
-  }
+//   .menu_button {
+//     font-size: 16px;
+//   }
 
-  .main-inner_title-subtitle > h2 {
-    font-size: 55px;
-  }
+//   .main-inner_title-subtitle > h2 {
+//     font-size: 55px;
+//   }
 
-  .main-inner_title-subtitle > h3 {
-    font-size: 18px;
-    line-height: 30px;
-  }
-}
+//   .main-inner_title-subtitle > h3 {
+//     font-size: 18px;
+//     line-height: 30px;
+//   }
+// }
 
 /* Планшеты и маленькие ноутбуки (768px - 1024px) */
 @media (max-width: 1024px) {
