@@ -36,7 +36,7 @@ $primaryColor: green;
   height: 85%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 50%);
+  grid-template-rows: repeat(2, 50%);
   gap: 25px;
 }
 
@@ -217,6 +217,30 @@ $primaryColor: green;
 }
 
 @media (max-width: 768px) {
+  .courses-page {
+    height: 350dvh;
+  }
+
+  .course-block_header {
+    padding-bottom: 5px;
+  }
+
+  .courses-page_enclosure-block {
+    width: 90%;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+  }
+
+  .course-header_course-icon img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .course-block_footer {
+    margin-top: 25px;
+  }
+
   .slide img {
     width: 50px;
     height: 50px;
@@ -224,6 +248,13 @@ $primaryColor: green;
   .slider-track {
     gap: 20px;
   }
+
+  .technologies-block {
+    width: 90%;
+    position: relative;
+    top: 8%;
+  }
+
   .technologies-block::before,
   .technologies-block::after {
     width: 40px;
