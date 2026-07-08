@@ -406,47 +406,16 @@ nav {
 
 /* ===== МЕДИАЗАПРОСЫ ДЛЯ АДАПТАЦИИ ===== */
 
-/* Ноутбуки и маленькие экраны (1024px - 1200px) */
-// @media (max-width: 1200px) {
-//   nav {
-//     gap: 30px;
-//     padding: 0 20px;
-//     flex-direction: column;
-//   }
-
-//   .floating-computer,
-//   .main-inner_cube {
-//     display: none;
-//   }
-
-//   .header_title-subtitle > h1 {
-//     font-size: 38px;
-//     text-align: center;
-//   }
-
-//   .header_title-subtitle > h2 {
-//     font-size: 14px;
-//   }
-
-//   .header_menu {
-//     gap: 10px;
-//   }
-
-//   .menu_button {
-//     font-size: 16px;
-//   }
-
-//   .main-inner_title-subtitle > h2 {
-//     font-size: 55px;
-//   }
-
-//   .main-inner_title-subtitle > h3 {
-//     font-size: 18px;
-//     line-height: 30px;
-//   }
-// }
+/* Ноутбуки и маленькие экраны (1024px - 1240px) */
+@media (max-width: 1240px) {
+  .main-inner_cube {
+    display: none;
+  }
+}
 
 /* Планшеты и маленькие ноутбуки (768px - 1024px) */
+
+/*
 @media (max-width: 1024px) {
   nav {
     flex-wrap: wrap;
@@ -509,8 +478,11 @@ nav {
     font-size: 16px;
   }
 }
+*/
 
 /* Мобильные устройства (480px - 768px) */
+
+/*
 @media (max-width: 768px) {
   nav {
     flex-direction: column;
@@ -572,83 +544,10 @@ nav {
     font-size: 14px;
   }
 }
-
-/* Маленькие мобильные устройства (320px - 480px) */
-@media (max-width: 480px) {
-  nav {
-    padding: 8px 10px;
-    gap: 8px;
-  }
-
-  .header_title-subtitle > h1 {
-    font-size: 16px;
-  }
-
-  .header_title-subtitle > h2 {
-    font-size: 9px;
-  }
-
-  .menu_button {
-    font-size: 10px;
-    padding: 3px 6px;
-  }
-
-  .main-inner {
-    padding-top: 90px;
-    gap: 15px;
-  }
-
-  .main-inner_title-subtitle {
-    width: 95%;
-    gap: 10px;
-  }
-
-  .main-inner_title-subtitle > h2 {
-    font-size: 24px;
-  }
-
-  .main-inner_title-subtitle > h3 {
-    font-size: 12px;
-    line-height: 20px;
-  }
-
-  .title-subtitle_button {
-    padding: 12px 20px;
-    font-size: 12px;
-  }
-}
-
-/* Очень маленькие экраны (< 320px) */
-@media (max-width: 320px) {
-  .header_title-subtitle > h1 {
-    font-size: 14px;
-  }
-
-  .header_title-subtitle > h2 {
-    font-size: 8px;
-  }
-
-  .menu_button {
-    font-size: 9px;
-    padding: 2px 5px;
-  }
-
-  .main-inner_title-subtitle > h2 {
-    font-size: 20px;
-  }
-
-  .main-inner_title-subtitle > h3 {
-    font-size: 11px;
-    line-height: 18px;
-  }
-
-  .title-subtitle_button {
-    padding: 10px 16px;
-    font-size: 11px;
-  }
-}
+*/
 
 /* Альбомная ориентация на мобильных */
+/*
 @media (max-height: 500px) and (orientation: landscape) {
   .main-inner {
     padding-top: 80px;
@@ -692,3 +591,4 @@ nav {
     padding: 3px 8px;
   }
 }
+*/
