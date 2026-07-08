@@ -63,6 +63,13 @@
   color: lightgrey;
 }
 
+.info-container_info-block a {
+  font-size: 26px;
+  color: lightgrey;
+  text-decoration: none;
+  font-weight: 600;
+}
+
 .info-block_address-block {
   width: auto;
   height: auto;
@@ -128,22 +135,27 @@
   .contacts {
     flex-direction: column;
     align-items: center;
+    height: 80dvh;
   }
   .contacts_map {
     width: 90%;
+    height: 40%;
+    margin-bottom: 10px;
   }
   .contacts_info-container {
     width: 100%;
-    height: 55%;
-    border: 2px solid red;
+    height: 65%;
     align-items: center;
   }
   .info-container_info-block {
     width: calc(90% - 50px);
     height: 10%;
-    padding: 15px;
+    padding: 20px;
   }
   .info-container_info-block h3 {
+    font-size: 24px;
+  }
+  .info-container_info-block a {
     font-size: 24px;
   }
   .info-block_address-block h3 {
