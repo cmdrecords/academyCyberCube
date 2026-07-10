@@ -142,7 +142,7 @@ $primaryColor: green;
   filter: brightness(0.9) contrast(1.1) !important;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1085px) {
   .contacts {
     flex-direction: column;
     align-items: center;
@@ -162,9 +162,10 @@ $primaryColor: green;
   }
 
   .info-container_info-block {
-    width: calc(90% - 50px);
+    width: calc(auto - 50px);
     height: 10%;
     padding: 20px;
+    justify-content: center;
   }
 
   .info-container_info-block h3 {
