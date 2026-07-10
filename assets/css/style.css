@@ -250,6 +250,7 @@ nav {
   box-shadow: 0 0 18px rgba(0, 255, 102, 0.22), 0 0 42px rgba(0, 255, 102, 0.12);
   transition: 0.4s;
   margin-top: 5px;
+  text-decoration: none;
 }
 .title-subtitle_button:hover {
   cursor: pointer;
@@ -386,6 +387,28 @@ nav {
   .main-inner_cube {
     display: none;
   }
+  nav {
+    position: absolute;
+    height: 20%;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    top: 0;
+  }
+  .floating-computer {
+    display: none;
+  }
+  .main-inner_title-subtitle {
+    text-align: center;
+    align-items: center;
+  }
+  .main-inner_title-subtitle > h3 {
+    text-align: center;
+    width: 600px;
+  }
+  .title-subtitle_button {
+    text-decoration: none;
+  }
 }
 /* Планшеты и маленькие ноутбуки (768px - 1024px) */
 /*
@@ -513,52 +536,6 @@ nav {
   .title-subtitle_button {
     padding: 14px 25px;
     font-size: 14px;
-  }
-}
-*/
-/* Альбомная ориентация на мобильных */
-/*
-@media (max-height: 500px) and (orientation: landscape) {
-  .main-inner {
-    padding-top: 80px;
-    gap: 15px;
-  }
-
-  .main-inner_title-subtitle {
-    width: 80%;
-    height: auto;
-  }
-
-  .main-inner_title-subtitle > h2 {
-    font-size: 28px;
-  }
-
-  .main-inner_title-subtitle > h3 {
-    font-size: 13px;
-    line-height: 20px;
-  }
-
-  .title-subtitle_button {
-    padding: 14px 22px;
-    font-size: 13px;
-  }
-
-  nav {
-    min-height: 6dvh;
-    padding: 5px 15px;
-  }
-
-  .header_title-subtitle > h1 {
-    font-size: 18px;
-  }
-
-  .header_title-subtitle > h2 {
-    font-size: 10px;
-  }
-
-  .menu_button {
-    font-size: 11px;
-    padding: 3px 8px;
   }
 }
 *//*# sourceMappingURL=style.css.map */
