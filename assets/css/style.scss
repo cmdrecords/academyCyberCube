@@ -157,19 +157,17 @@ $primaryColor: green;
 /* ===== МОБИЛЬНЫЕ ТЕЛЕФОНЫ (до 768px) ===== */
 @media screen and (max-width: 768px) {
   .sign-up {
+    height: 60dvh;
     padding: 15px;
-    min-height: 100dvh;
   }
 
   .sign-up_form {
-    width: 100%;
-    max-width: 440px;
-    padding: 20px 16px;
-    min-height: auto;
+    width: 65%;
+    padding: 10px 15px 10px 15px;
   }
 
   .sign-up_form h2 {
-    font-size: 28px;
+    font-size: 42px;
     letter-spacing: 3px;
   }
 
@@ -179,7 +177,8 @@ $primaryColor: green;
   }
 
   .form_input-container {
-    width: 100%;
+    width: 90%;
+    height: 12%;
     margin-top: 14px;
     min-height: 38px;
     padding: 0 16px;
@@ -200,11 +199,11 @@ $primaryColor: green;
 
   .form_button {
     width: 100%;
+    height: 12%;
     font-size: 16px;
-    min-height: 42px;
     margin-top: 16px;
     letter-spacing: 1.5px;
-    padding: 0 20px;
+    padding: 0;
   }
 
   .status {
@@ -214,109 +213,6 @@ $primaryColor: green;
   }
 }
 
-/* ===== МАЛЕНЬКИЕ ТЕЛЕФОНЫ (до 480px) ===== */
-@media screen and (max-width: 480px) {
-  .sign-up {
-    padding: 10px;
-  }
-
-  .sign-up_form {
-    padding: 16px 12px;
-    border-radius: 14px;
-  }
-
-  .sign-up_form h2 {
-    font-size: 24px;
-    letter-spacing: 2px;
-  }
-
-  .sign-up_form h3 {
-    font-size: 12px;
-    text-underline-offset: 4px;
-  }
-
-  .form_input-container {
-    margin-top: 10px;
-    min-height: 34px;
-    padding: 0 12px;
-    gap: 8px;
-    border-width: 1.5px;
-  }
-
-  .input-container_input {
-    font-size: 13px;
-    min-height: 34px;
-    padding: 4px 0;
-  }
-
-  .name-icon,
-  .phone-icon {
-    width: 18px;
-    height: 18px;
-  }
-
-  .form_button {
-    font-size: 14px;
-    min-height: 38px;
-    margin-top: 12px;
-    border-width: 1.5px;
-    letter-spacing: 1px;
-  }
-
-  .status {
-    font-size: 13px;
-    margin-top: 4px;
-    min-height: 20px;
-  }
-}
-
-/* ===== ОЧЕНЬ МАЛЕНЬКИЕ ЭКРАНЫ (до 360px) ===== */
-@media screen and (max-width: 360px) {
-  .sign-up_form {
-    padding: 12px 10px;
-  }
-
-  .sign-up_form h2 {
-    font-size: 20px;
-    letter-spacing: 1px;
-  }
-
-  .sign-up_form h3 {
-    font-size: 11px;
-  }
-
-  .form_input-container {
-    min-height: 30px;
-    padding: 0 10px;
-    margin-top: 8px;
-  }
-
-  .input-container_input {
-    font-size: 12px;
-    min-height: 30px;
-    padding: 3px 0;
-  }
-
-  .name-icon,
-  .phone-icon {
-    width: 16px;
-    height: 16px;
-  }
-
-  .form_button {
-    font-size: 13px;
-    min-height: 34px;
-    margin-top: 10px;
-    letter-spacing: 0.5px;
-  }
-
-  .status {
-    font-size: 12px;
-    min-height: 18px;
-  }
-}
-
-/* ===== ЛАНДШАФТНАЯ ОРИЕНТАЦИЯ НА ТЕЛЕФОНАХ ===== */
 @media screen and (max-height: 500px) and (orientation: landscape) {
   .sign-up {
     padding: 10px 20px;
