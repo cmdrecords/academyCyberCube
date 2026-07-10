@@ -11,7 +11,7 @@
 
 .learning-process {
   width: 100%;
-  height: calc(150dvh - 20px);
+  height: calc(auto - 20px);
   background: radial-gradient(circle at top, rgba(0, 255, 102, 0.1), transparent 40%), linear-gradient(180deg, #071007 0%, #020402 100%);
   display: flex;
   flex-direction: column;
@@ -21,11 +21,13 @@
 }
 
 .learning-process_title {
+  text-align: center;
   color: white;
   font-size: 40px;
 }
 
 .learning-process_subtitle {
+  text-align: center;
   font-size: 18px;
   color: #7cff9a;
   font-weight: 500;
@@ -33,7 +35,8 @@
 
 .learning-process_process-line {
   width: 60%;
-  height: 1%;
+  height: 1dvh;
+  border: 2px solid red;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -62,14 +65,14 @@
 }
 
 .durations_stage-duration {
-  width: 10%;
+  width: auto;
   height: 100%;
   background: rgba(126, 240, 126, 0.5);
   border-radius: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1px 14px 1px 14px;
+  padding: 8px 20px 8px 20px;
   border: 1px solid black;
   color: white;
   font-weight: 600;
@@ -109,6 +112,7 @@
 
 .process-timeline_part:nth-of-type(2) {
   width: 55%;
+  height: 60dvh;
   background-image: url("../images/1-year-technologies.png");
   background-size: 800px 1050px;
   background-position: center;
@@ -122,7 +126,7 @@
 
 .process-timeline_stage-card {
   width: calc(100% - 48px);
-  height: calc(100% - 56px);
+  height: calc(auto - 56px);
   border: 2px solid #7ef07e;
   border-radius: 28px;
   padding: 28px 24px;
@@ -390,5 +394,111 @@
     top: 80px;
     left: 30px;
     transform: rotate(-5deg);
+  }
+}
+@media (max-width: 1450px) {
+  .process-timeline_part:nth-of-type(1) {
+    width: 50%;
+  }
+  .process-timeline_part:nth-of-type(2) {
+    width: 50%;
+    background-size: 750px 1000px;
+    background-position: -110px 50%;
+  }
+}
+@media (max-width: 1386px) {
+  .learning-process_process-timeline {
+    width: 80%;
+  }
+  .process-timeline_part:nth-of-type(2) {
+    width: 50%;
+    background-size: 700px 950px;
+    background-position: -110px 50%;
+  }
+  .header_numbering h2 {
+    font-size: 60px;
+  }
+  .header_numbering h3 {
+    font-size: 14px;
+  }
+  .process-timeline_stage-card {
+    height: auto;
+  }
+}
+@media (max-width: 1200px) {
+  .learning-process_process-timeline {
+    width: 90%;
+  }
+}
+@media (max-width: 1078px) {
+  .learning-process_schedule-box {
+    width: 65%;
+    justify-content: center;
+  }
+  .final-block_final-info p {
+    font-size: 16px;
+  }
+}
+@media (max-width: 1048px) {
+  .process-timeline_part:nth-of-type(1) {
+    width: 75%;
+  }
+  .process-timeline_part:nth-of-type(2) {
+    display: none;
+  }
+  .learning-process_process-timeline {
+    justify-content: center;
+  }
+}
+@media (max-width: 990px) {
+  .learning-process_schedule-box {
+    width: 75%;
+  }
+}
+@media (max-width: 864px) {
+  .learning-process_schedule-box {
+    width: 85%;
+  }
+}
+@media (max-width: 768px) {
+  .process-timeline_part:nth-of-type(1) {
+    width: 90%;
+  }
+  .final-block_final-info p {
+    display: none;
+  }
+  .learning-process_process-line {
+    width: 80%;
+  }
+  .learning-process_durations {
+    width: 90%;
+  }
+  .durations_stage-duration {
+    font-size: 14px;
+  }
+  .schedule-box_text {
+    flex-direction: column;
+    align-items: center;
+  }
+  .learning-process_schedule-box {
+    width: 55%;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .schedule-box_accent-hours {
+    font-size: 14px;
+  }
+  .learning-process_final-block {
+    width: 70%;
+  }
+  .final-block_certificate-badge {
+    font-size: 16px;
+  }
+  .final-info_title::before {
+    content: "";
+    display: none;
+  }
+  .learning-process_subtitle {
+    width: 80%;
   }
 }/*# sourceMappingURL=style.css.map */
