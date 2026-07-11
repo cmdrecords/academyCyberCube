@@ -217,7 +217,7 @@ nav {
       transparent 40%
     ),
     linear-gradient(180deg, #071007 0%, #020402 100%);
-  height: 200dvh;
+  height: auto;
 }
 
 #main {
@@ -235,6 +235,42 @@ nav {
 .main-inner_title-subtitle {
   width: 37.5%;
   height: 60%;
+}
+
+.courses-page {
+  width: 100%;
+  height: 135dvh;
+  // background: radial-gradient(
+  //     circle at top,
+  //     rgba(0, 255, 102, 0.1),
+  //     transparent 40%
+  //   ),
+  //   linear-gradient(180deg, #071007 0%, #020402 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 25px;
+}
+
+.courses-page h2 {
+  font-size: 40px;
+  color: white;
+  margin-top: 20px;
+}
+
+.courses-page_enclosure-block {
+  width: 75%;
+  height: 85%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 50%);
+  gap: 25px;
+}
+
+.course-block_header {
+  width: 100%;
+  height: 30%;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -282,6 +318,119 @@ nav {
 .main-inner_cube {
   width: 37.5%;
   height: 60%;
+  gap: 8px;
+}
+
+.course-header_course-icon {
+  width: 20%;
+  height: 47.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 255, 102, 0.22), 0 0 15px rgba(0, 255, 102, 0.12);
+  border: 1px solid #7ef07e;
+}
+
+.enclosure-block_course-block {
+  background: rgba(#7ef07e, 0.1);
+  box-shadow: 0 0 15px rgba(0, 255, 102, 0.22), 0 0 15px rgba(0, 255, 102, 0.12);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  padding: 15px;
+  border: 1px solid rgba(#7ef07e, 0.5);
+  border-radius: 10px;
+}
+
+.course-header_course-title {
+  color: white;
+  font-size: 27px;
+}
+
+.course-header_course-level {
+  color: rgba(#7ef07e, 0.5);
+}
+
+.course-block_content {
+  width: 100%;
+  height: 50%;
+}
+
+.course-features_list {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  list-style-type: none;
+  margin-top: 12px;
+}
+
+.course-block_footer {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: start;
+  gap: 10px;
+}
+
+.footer_course-price {
+  color: #7ef07e;
+  font-size: 28px;
+}
+
+.footer_course-price span {
+  font-size: 18px;
+}
+
+.footer_button-sign-up {
+  width: 100%;
+  height: 42.5%;
+  background: #539e53;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  text-decoration: none;
+  border-radius: 0px 15px 15px 15px;
+  transition: 0.4s;
+  &:hover {
+    box-shadow: rgba(0, 255, 102, 0.22) 0px 0px 18px,
+      rgba(0, 255, 102, 0.12) 0px 0px 42px;
+    font-size: 19px;
+    border-radius: 30px;
+  }
+}
+
+.technologies-block {
+  width: 75%;
+  overflow: hidden;
+  background: rgba(#7ef07e, 0.2);
+  padding: 5px 0;
+  border-radius: 10px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  position: relative;
+  margin-top: 20px;
+}
+
+.slider-track {
+  display: flex;
+  gap: 20px;
+  animation: scrollLeft 20s linear infinite;
+  width: max-content;
+}
+
+.slide {
+  flex: 0 0 auto;
+  border: 2px solid #7ef07e;
+  padding: 8px;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -470,3 +619,69 @@ nav {
 }
 
 /*Конец hero */
+.slide:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(#7ef07e, 0.4);
+}
+
+.slide img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  display: block;
+  transition: filter 0.3s ease;
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.technologies-block::before,
+.technologies-block::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 40px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.technologies-block::before {
+  left: 0;
+  background: linear-gradient(to right, #396d39, transparent);
+}
+
+.technologies-block::after {
+  right: 0;
+  background: linear-gradient(to left, #396d39, transparent);
+}
+
+@media (max-width: 768px) {
+  .slide img {
+    width: 50px;
+    height: 50px;
+  }
+  .slider-track {
+    gap: 20px;
+  }
+  .technologies-block::before,
+  .technologies-block::after {
+    width: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide img {
+    width: 40px;
+    height: 40px;
+  }
+  .slider-track {
+    gap: 15px;
+  }
+}
