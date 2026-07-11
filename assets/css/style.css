@@ -431,4 +431,10 @@ nav {
     margin-top: 5%;
   }
 }
-/* Мобильные устройства (480px - 768px) *//*# sourceMappingURL=style.css.map */
+/* Мобильные устройства (480px - 768px) */
+@media (max-width: 768px) {
+  .title-subtitle_button {
+    width: -moz-max-content;
+    width: max-content;
+  }
+}/*# sourceMappingURL=style.css.map */

@@ -463,5 +463,8 @@ nav {
 
 /* Мобильные устройства (480px - 768px) */
 
-// @media (max-width: 768px) {
-// }
+@media (max-width: 768px) {
+  .title-subtitle_button {
+    width: max-content;
+  }
+}
