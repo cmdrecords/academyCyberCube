@@ -411,131 +411,24 @@ nav {
   }
 }
 /* Планшеты и маленькие ноутбуки (768px - 1024px) */
-/*
 @media (max-width: 1024px) {
+  .main-inner_cube {
+    display: none;
+  }
+  .floating-computer {
+    display: none;
+  }
   nav {
-    flex-wrap: wrap;
-    height: auto;
-    min-height: 10dvh;
-    padding: 15px 20px;
-    gap: 20px;
-    justify-content: space-between;
-  }
-
-  .header_title-subtitle {
-    gap: 5px;
-  }
-
-  .header_title-subtitle > h1 {
-    font-size: 24px;
-  }
-
-  .header_title-subtitle > h2 {
-    font-size: 12px;
-  }
-
-  .header_menu {
-    gap: 8px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .menu_button {
-    font-size: 14px;
-    padding: 5px 10px;
-  }
-
-  .main-inner {
     flex-direction: column;
-    justify-content: center;
-    gap: 30px;
-    padding-top: 80px;
   }
-
-  .main-inner_title-subtitle {
-    width: 80%;
-    height: auto;
-    align-items: center;
+  .header_title-subtitle {
     text-align: center;
-    gap: 15px;
   }
-
-  .main-inner_title-subtitle > h2 {
-    font-size: 45px;
-  }
-
-  .main-inner_title-subtitle > h3 {
-    font-size: 16px;
-    line-height: 28px;
-  }
-
-  .title-subtitle_button {
-    padding: 18px 30px;
-    font-size: 16px;
-  }
-}
-*/
-/* Мобильные устройства (480px - 768px) */
-/*
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    gap: 10px;
-    padding: 10px 15px;
-    min-height: 8dvh;
-  }
-
-  .header_title-subtitle {
-    align-items: center;
-    gap: 3px;
-  }
-
   .header_title-subtitle > h1 {
-    font-size: 20px;
+    font-size: 42px;
   }
-
-  .header_title-subtitle > h2 {
-    font-size: 10px;
-  }
-
-  .header_menu {
-    gap: 5px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .menu_button {
-    font-size: 12px;
-    padding: 4px 8px;
-  }
-
-  #hero {
-    height: 100dvh;
-  }
-
-  .main-inner {
-    padding-top: 100px;
-    gap: 20px;
-    justify-content: flex-start;
-  }
-
-  .main-inner_title-subtitle {
-    width: 90%;
-    gap: 12px;
-  }
-
-  .main-inner_title-subtitle > h2 {
-    font-size: 32px;
-  }
-
-  .main-inner_title-subtitle > h3 {
-    font-size: 14px;
-    line-height: 24px;
-  }
-
   .title-subtitle_button {
-    padding: 14px 25px;
-    font-size: 14px;
+    margin-top: 5%;
   }
 }
-*//*# sourceMappingURL=style.css.map */
+/* Мобильные устройства (480px - 768px) *//*# sourceMappingURL=style.css.map */
