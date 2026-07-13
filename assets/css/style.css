@@ -1,5 +1,441 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Montserrat Alternates";
+  src: url(../fonts/MontserratAlternates-Medium.woff2) format(woff2);
+  display: swap;
+}
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Montserrat Alternates", sans-serif;
+}
+
+h1 {
+  font-family: "Montserrat Alternates", sans-serif;
+}
+
+nav {
+  width: 100%;
+  height: 12dvh;
+  position: absolute;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  position: fixed;
+  backdrop-filter: blur(10px);
+  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  padding-bottom: 1dvh;
+  z-index: 50;
+}
+
+.header_title-subtitle {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.header_title-subtitle > h1 {
+  color: #b8ffb8;
+  text-shadow: 0 0 18px rgba(0, 255, 102, 0.22), 0 0 42px rgba(0, 255, 102, 0.12);
+  font-weight: 800;
+  font-size: 35px;
+}
+
+.header_title-subtitle > h2 {
+  color: #7ef07e;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.header_menu {
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+}
+
+.menu_button {
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  color: #7ef07e;
+  transition: 0.4s;
+  text-decoration: none;
+}
+.menu_button:hover {
+  cursor: pointer;
+  color: #b8ffb8;
+  text-shadow: 0 0 18px rgba(0, 255, 102, 0.22), 0 0 42px rgba(0, 255, 102, 0.12);
+}
+
+.floating-computer {
+  width: 120px;
+  height: 65px;
+  animation: floatComputer 4s ease-in-out infinite;
+  filter: drop-shadow(0 18px 25px rgba(0, 255, 102, 0.12));
+  margin-top: 5px;
+}
+
+.computer-screen {
+  width: 120px;
+  height: 65px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #061306 0%, #0a2a10 100%);
+  border: 1px solid rgba(0, 255, 102, 0.5);
+  box-shadow: inset 0 0 18px rgba(0, 255, 102, 0.08), 0 0 18px rgba(0, 255, 102, 0.22), 0 0 42px rgba(0, 255, 102, 0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+.computer-screen::before {
+  content: "КиберКуб";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7cff9a;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(0, 255, 102, 0.75);
+  animation: glowText 2.5s ease-in-out infinite;
+}
+
+.computer-screen::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 16px;
+  right: 16px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, rgba(124, 255, 154, 0.95), transparent);
+  animation: scanLine 2.8s linear infinite;
+}
+
+.computer-base {
+  width: 70px;
+  height: 7px;
+  border-radius: 0 0 12px 12px;
+  background: linear-gradient(135deg, #0f3a17 0%, #1b7a31 100%);
+  margin: 6px auto 0;
+  position: relative;
+  border: 1px solid rgba(0, 255, 102, 0.3);
+}
+
+.computer-base::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  top: -10px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(0, 255, 102, 0.22);
+  filter: blur(6px);
+}
+
+@keyframes floatComputer {
+  0%, 100% {
+    transform: translateY(0px) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(2deg);
+  }
+}
+@keyframes glowText {
+  0%, 100% {
+    opacity: 0.82;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+}
+@keyframes scanLine {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+}
+@media (max-width: 900px) {
+  .header-visual {
+    width: 220px;
+    height: 170px;
+  }
+}
+@media (max-width: 768px) {
+  .floating-computer {
+    width: 140px;
+    height: 110px;
+  }
+  .computer-screen {
+    width: 140px;
+    height: 88px;
+  }
+  .computer-base {
+    width: 90px;
+  }
+}
+#hero {
+  background: radial-gradient(circle at top, rgba(0, 255, 102, 0.1), transparent 40%), linear-gradient(180deg, #071007 0%, #020402 100%);
+  height: 200dvh;
+}
+
+#main {
+  height: 100dvh;
+}
+
+.main-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-inner_title-subtitle {
+  width: 37.5%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 10px;
+}
+
+.main-inner_title-subtitle > h2 {
+  color: white;
+  font-size: 75px;
+  font-weight: 900;
+}
+
+.main-inner_title-subtitle > h2 > span {
+  color: #7cff9a;
+  text-shadow: 0 0 10px rgba(0, 255, 102, 0.75);
+}
+
+.main-inner_title-subtitle > h3 {
+  color: #baf7ba;
+  font-size: 20px;
+  line-height: 35px;
+  font-weight: 500;
+}
+
+.title-subtitle_button {
+  background: linear-gradient(90deg, #00cc55, #00ff66);
+  padding: 22.5px 35px 22.5px 35px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  outline: none;
+  border-radius: 50px;
+  color: #031203;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 0 0 18px rgba(0, 255, 102, 0.22), 0 0 42px rgba(0, 255, 102, 0.12);
+  transition: 0.4s;
+  margin-top: 5px;
+  text-decoration: none;
+}
+.title-subtitle_button:hover {
+  cursor: pointer;
+  transform: translateY(-5px);
+}
+
+.main-inner_cube {
+  width: 37.5%;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cube-container {
+  perspective: 1200px;
+  display: flex;
+  justify-content: center;
+  transform: scale(1.6);
+}
+
+.cube {
+  width: 180px;
+  height: 180px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotateCube 15s ease-in-out infinite;
+  transform: rotateX(-10deg) rotateY(15deg);
+}
+
+.cube-face {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 255, 102, 0.2);
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(5, 20, 5, 0.95) 0%, rgba(10, 45, 10, 0.92) 100%);
+  box-shadow: inset 0 0 22px rgba(0, 255, 102, 0.08), 0 0 18px rgba(0, 255, 102, 0.08);
+  backface-visibility: hidden;
+  font-weight: 800;
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: #9effaa;
+  letter-spacing: 0.05em;
+}
+
+.cube-face::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(0, 255, 102, 0.2), rgba(0, 204, 85, 0.12));
+  opacity: 0.18;
+}
+
+.cube-face.front {
+  transform: rotateY(0deg) translateZ(90px);
+}
+
+.cube-face.back {
+  transform: rotateY(180deg) translateZ(90px);
+}
+
+.cube-face.right {
+  transform: rotateY(90deg) translateZ(90px);
+}
+
+.cube-face.left {
+  transform: rotateY(-90deg) translateZ(90px);
+}
+
+.cube-face.top {
+  transform: rotateX(90deg) translateZ(90px);
+}
+
+.cube-face.bottom {
+  transform: rotateX(-90deg) translateZ(90px);
+}
+
+@keyframes rotateCube {
+  0% {
+    transform: rotateX(-10deg) rotateY(15deg);
+  }
+  25% {
+    transform: rotateX(45deg) rotateY(60deg);
+  }
+  50% {
+    transform: rotateX(90deg) rotateY(180deg);
+  }
+  75% {
+    transform: rotateX(135deg) rotateY(300deg);
+  }
+  100% {
+    transform: rotateX(180deg) rotateY(360deg);
+  }
+}
+@keyframes floatComputer {
+  0%, 100% {
+    transform: translateY(0px) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(2deg);
+  }
+}
+@keyframes glowText {
+  0%, 100% {
+    opacity: 0.82;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+}
+@keyframes scanLine {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+}
+/* ===== МЕДИАЗАПРОСЫ ДЛЯ АДАПТАЦИИ ===== */
+/* Ноутбуки и маленькие экраны (1024px - 1240px) */
+@media (max-width: 1240px) {
+  .main-inner_cube {
+    display: none;
+  }
+  nav {
+    position: absolute;
+    height: 20%;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    top: 0;
+  }
+  .floating-computer {
+    display: none;
+  }
+  .main-inner_title-subtitle {
+    text-align: center;
+    align-items: center;
+  }
+  .main-inner_title-subtitle > h3 {
+    text-align: center;
+    width: 600px;
+  }
+  .title-subtitle_button {
+    text-decoration: none;
+  }
+}
+/* Планшеты и маленькие ноутбуки (768px - 1024px) */
+@media (max-width: 1024px) {
+  .main-inner_cube {
+    display: none;
+  }
+  .floating-computer {
+    display: none;
+  }
+  nav {
+    flex-direction: column;
+  }
+  .header_title-subtitle {
+    text-align: center;
+  }
+  .header_title-subtitle > h1 {
+    font-size: 42px;
+  }
+  .title-subtitle_button {
+    margin-top: 5%;
+  }
+}
+/* Мобильные устройства (480px - 768px) */
+@media (max-width: 768px) {
+  .title-subtitle_button {
+    width: -moz-max-content;
+    width: max-content;
+  }
 }/*# sourceMappingURL=style.css.map */
