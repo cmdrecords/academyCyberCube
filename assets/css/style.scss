@@ -23,13 +23,22 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 60px;
-  position: fixed;
-  backdrop-filter: blur(10px);
-  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
-  padding-bottom: 1dvh;
-  z-index: 50;
+  gap: 25px;
+}
+
+.courses-page h2 {
+  font-size: 40px;
+  color: white;
+  margin-top: 20px;
+}
+
+.courses-page_enclosure-block {
+  width: 75%;
+  height: 85%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 50%);
+  gap: 25px;
 }
 
 .header_title-subtitle {
@@ -404,59 +413,38 @@ nav {
   }
 }
 
-/* ===== МЕДИАЗАПРОСЫ ДЛЯ АДАПТАЦИИ ===== */
-
-/* Ноутбуки и маленькие экраны (1024px - 1240px) */
-@media (max-width: 1240px) {
-  .main-inner_cube {
-    display: none;
-  }
-  nav {
-    position: absolute;
-    height: 20%;
-    align-items: center;
-    justify-content: center;
-    left: 0;
-    top: 0;
-  }
-  .floating-computer {
-    display: none;
-  }
-
-  .main-inner_title-subtitle {
-    text-align: center;
-    align-items: center;
-  }
-  .main-inner_title-subtitle > h3 {
-    text-align: center;
-    width: 600px;
-  }
-
-  .title-subtitle_button {
-    text-decoration: none;
-  }
+.technologies-block::before,
+.technologies-block::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 40px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
 }
 
-/* Планшеты и маленькие ноутбуки (768px - 1024px) */
+.technologies-block::before {
+  left: 0;
+  background: linear-gradient(to right, #396d39, transparent);
+}
 
-@media (max-width: 1024px) {
-  .main-inner_cube {
-    display: none;
-  }
-  .floating-computer {
-    display: none;
-  }
-  nav {
-    flex-direction: column;
+.technologies-block::after {
+  right: 0;
+  background: linear-gradient(to left, #396d39, transparent);
+}
+
+@media (max-width: 768px) {
+  .slide img {
+    width: 50px;
+    height: 50px;
   }
   .header_title-subtitle {
     text-align: center;
   }
-  .header_title-subtitle > h1 {
-    font-size: 42px;
-  }
-  .title-subtitle_button {
-    margin-top: 5%;
+  .technologies-block::before,
+  .technologies-block::after {
+    width: 40px;
   }
 }
 
