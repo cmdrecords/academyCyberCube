@@ -25,10 +25,6 @@ nav {
   justify-content: center;
   align-items: center;
   gap: 60px;
-  position: fixed;
-  backdrop-filter: blur(10px);
-  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
   padding-bottom: 1dvh;
   z-index: 50;
 }
@@ -215,10 +211,34 @@ nav {
 }
 
 #hero {
-  background:
-    radial-gradient(circle at top, rgba(0, 255, 102, 0.1), transparent 40%),
-    linear-gradient(180deg, #071007 0%, #020402 100%);
+  background: 
+    /* Первый слой — большой светящийся круг сверху */
+    radial-gradient(
+      circle at 20% 10%,
+      rgba(0, 255, 102, 0.25),
+      transparent 50%
+    ),
+    /* Второй слой — второй круг справа для объема */
+    radial-gradient(circle at 80% 30%, rgba(0, 200, 80, 0.12), transparent 40%),
+    /* Третий слой — мягкое свечение снизу */
+    radial-gradient(
+        circle at 50% 100%,
+        rgba(0, 255, 102, 0.08),
+        transparent 35%
+      ),
+    /* Базовый градиент — без резких переходов, чтобы не было черных дыр */
+    linear-gradient(165deg, #0a1a0a 0%, #030803 30%, #010301 70%, #050f05 100%);
+
+  background-blend-mode: normal, normal, normal, normal;
+  background-attachment: fixed; /* Фон не скроллится, всегда заполнен */
+  position: relative;
+  overflow: hidden;
   height: auto;
+}
+
+#hero > * {
+  position: relative;
+  z-index: 1;
 }
 
 #main {
