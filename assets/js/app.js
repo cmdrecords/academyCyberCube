@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const lineIcons = [
   "assets/images/icons8-c-sharp-logo-100.png",
   "assets/images/icons8-c++-100.png",
@@ -34,7 +33,7 @@ function createSlides(icons) {
   return slidesHTML;
 }
 track.innerHTML = createSlides(lineIcons);
-=======
+
 const durationsBtns = document.querySelectorAll(".durations_stage-duration");
 const durationLine = document.querySelector(".process-line_line");
 const stageCards = document.querySelectorAll(".process-timeline_stage-card");
@@ -53,4 +52,16 @@ for (let i = 0; i < durationsBtns.length; i++) {
     durationLine.style.width = linePositions[i];
   });
 }
->>>>>>> howIsTheTrainingGoingPage
+
+var map = L.map("map", {
+  attributionControl: false,
+}).setView([45.1121, 38.9616], 16);
+
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  maxZoom: 19,
+}).addTo(map);
+
+L.marker([45.1121, 38.9616])
+  .addTo(map)
+  .bindPopup("ул. им. Мурата Ахеджака, 10А<br>Краснодар")
+  .openPopup();
