@@ -41,8 +41,7 @@ nav {
 
 .header_title-subtitle > h1 {
   color: #b8ffb8;
-  text-shadow:
-    0 0 18px rgba(0, 255, 102, 0.22),
+  text-shadow: 0 0 18px rgba(0, 255, 102, 0.22),
     0 0 42px rgba(0, 255, 102, 0.12);
   font-weight: 800;
   font-size: 35px;
@@ -74,8 +73,7 @@ nav {
   &:hover {
     cursor: pointer;
     color: #b8ffb8;
-    text-shadow:
-      0 0 18px rgba(0, 255, 102, 0.22),
+    text-shadow: 0 0 18px rgba(0, 255, 102, 0.22),
       0 0 42px rgba(0, 255, 102, 0.12);
   }
 }
@@ -94,10 +92,8 @@ nav {
   border-radius: 18px;
   background: linear-gradient(135deg, #061306 0%, #0a2a10 100%);
   border: 1px solid rgba(0, 255, 102, 0.5);
-  box-shadow:
-    inset 0 0 18px rgba(0, 255, 102, 0.08),
-    0 0 18px rgba(0, 255, 102, 0.22),
-    0 0 42px rgba(0, 255, 102, 0.12);
+  box-shadow: inset 0 0 18px rgba(0, 255, 102, 0.08),
+    0 0 18px rgba(0, 255, 102, 0.22), 0 0 42px rgba(0, 255, 102, 0.12);
   position: relative;
   overflow: hidden;
 }
@@ -215,8 +211,11 @@ nav {
 }
 
 #hero {
-  background:
-    radial-gradient(circle at top, rgba(0, 255, 102, 0.1), transparent 40%),
+  background: radial-gradient(
+      circle at top,
+      rgba(0, 255, 102, 0.1),
+      transparent 40%
+    ),
     linear-gradient(180deg, #071007 0%, #020402 100%);
   height: 100dvh;
 }
@@ -270,11 +269,10 @@ nav {
   color: #031203;
   font-size: 18px;
   font-weight: bold;
-  box-shadow:
-    0 0 18px rgba(0, 255, 102, 0.22),
-    0 0 42px rgba(0, 255, 102, 0.12);
+  box-shadow: 0 0 18px rgba(0, 255, 102, 0.22), 0 0 42px rgba(0, 255, 102, 0.12);
   transition: 0.4s;
   margin-top: 5px;
+  text-decoration: none;
   &:hover {
     cursor: pointer;
     transform: translateY(-5px);
@@ -317,8 +315,7 @@ nav {
     rgba(5, 20, 5, 0.95) 0%,
     rgba(10, 45, 10, 0.92) 100%
   );
-  box-shadow:
-    inset 0 0 22px rgba(0, 255, 102, 0.08),
+  box-shadow: inset 0 0 22px rgba(0, 255, 102, 0.08),
     0 0 18px rgba(0, 255, 102, 0.08);
   backface-visibility: hidden;
   font-weight: 800;
@@ -405,5 +402,69 @@ nav {
   100% {
     transform: translateY(100px);
     opacity: 0;
+  }
+}
+
+/* ===== МЕДИАЗАПРОСЫ ДЛЯ АДАПТАЦИИ ===== */
+
+/* Ноутбуки и маленькие экраны (1024px - 1240px) */
+@media (max-width: 1240px) {
+  .main-inner_cube {
+    display: none;
+  }
+  nav {
+    position: absolute;
+    height: 20%;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    top: 0;
+  }
+  .floating-computer {
+    display: none;
+  }
+
+  .main-inner_title-subtitle {
+    text-align: center;
+    align-items: center;
+  }
+  .main-inner_title-subtitle > h3 {
+    text-align: center;
+    width: 600px;
+  }
+
+  .title-subtitle_button {
+    text-decoration: none;
+  }
+}
+
+/* Планшеты и маленькие ноутбуки (768px - 1024px) */
+
+@media (max-width: 1024px) {
+  .main-inner_cube {
+    display: none;
+  }
+  .floating-computer {
+    display: none;
+  }
+  nav {
+    flex-direction: column;
+  }
+  .header_title-subtitle {
+    text-align: center;
+  }
+  .header_title-subtitle > h1 {
+    font-size: 42px;
+  }
+  .title-subtitle_button {
+    margin-top: 5%;
+  }
+}
+
+/* Мобильные устройства (480px - 768px) */
+
+@media (max-width: 768px) {
+  .title-subtitle_button {
+    width: max-content;
   }
 }
