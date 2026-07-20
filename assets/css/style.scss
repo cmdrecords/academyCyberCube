@@ -407,3 +407,67 @@ nav {
     opacity: 0;
   }
 }
+
+/* ===== МЕДИАЗАПРОСЫ ДЛЯ АДАПТАЦИИ ===== */
+
+/* Ноутбуки и маленькие экраны (1024px - 1240px) */
+@media (max-width: 1240px) {
+  .main-inner_cube {
+    display: none;
+  }
+  nav {
+    position: absolute;
+    height: 20%;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    top: 0;
+  }
+  .floating-computer {
+    display: none;
+  }
+
+  .main-inner_title-subtitle {
+    text-align: center;
+    align-items: center;
+  }
+  .main-inner_title-subtitle > h3 {
+    text-align: center;
+    width: 600px;
+  }
+
+  .title-subtitle_button {
+    text-decoration: none;
+  }
+}
+
+/* Планшеты и маленькие ноутбуки (768px - 1024px) */
+
+@media (max-width: 1024px) {
+  .main-inner_cube {
+    display: none;
+  }
+  .floating-computer {
+    display: none;
+  }
+  nav {
+    flex-direction: column;
+  }
+  .header_title-subtitle {
+    text-align: center;
+  }
+  .header_title-subtitle > h1 {
+    font-size: 42px;
+  }
+  .title-subtitle_button {
+    margin-top: 5%;
+  }
+}
+
+/* Мобильные устройства (480px - 768px) */
+
+@media (max-width: 768px) {
+  .title-subtitle_button {
+    width: max-content;
+  }
+}
