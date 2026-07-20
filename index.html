@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="assets/css/courses.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/trainingStyle.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/contactsStyle.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/signUpStyle.css" />
   </head>
   <body>
     <header>
@@ -592,6 +593,35 @@
         <div id="map" class="contacts_map"></div>
       </div>
     </section>
+
+    <section id="sign-up">
+      <div class="sign-up">
+        <form class="sign-up_form" id="tgForm">
+          <h2>АКАДЕМИЯ <br />КИБЕРКУБ</h2>
+          <h3>ЗАПИСЬ НА ЗАНЯТИЯ</h3>
+          <div class="form_input-container">
+            <img src="/assets/images/name-unactive.png" width="35px" height="35px" class="name-icon"></img>
+            <input
+              type="text"
+              placeholder="Ваше полное имя"
+              class="input-container_input"
+              id="fullName"
+            />
+          </div>
+          <div class="form_input-container">
+            <img src="/assets/images/phone-unactive.png" width="35px" height="35px" class="phone-icon"></img>
+            <input
+              type="text"
+              placeholder="Ваш номер телефона"
+              class="input-container_input"
+              id="phone"
+            />
+          </div>
+          <button class="form_button">Отправить заявку</button>
+          <div id="statusMessage" class="status"></div>
+        </form>
+      </div>
+    </section>
       </section>
     </main>
 
@@ -599,6 +629,6 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
     AOS.init();
-  </script>
-  </head>
+    </script>
+  </body>
 </html>
