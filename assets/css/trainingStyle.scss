@@ -1,4 +1,41 @@
-$primaryColor: green;
+$primaryColor: #7ef07e;
+$darkBg: #0a0f0a;
+$cardBg: rgba(126, 240, 126, 0.05);
+$glowColor: rgba(126, 240, 126, 0.3);
+
+@mixin glass-effect {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(126, 240, 126, 0.15);
+}
+
+@mixin neon-glow($color: $primaryColor, $intensity: 0.4) {
+  box-shadow:
+    0 0 20px rgba($color, $intensity),
+    0 0 40px rgba($color, $intensity * 0.6),
+    0 0 80px rgba($color, $intensity * 0.3),
+    inset 0 0 20px rgba($color, $intensity * 0.1);
+}
+
+@mixin gradient-text {
+  background: linear-gradient(135deg, #7ef07e, #4ade80, #22c55e, #7ef07e);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientFlow 4s ease-in-out infinite;
+}
+
+@keyframes gradientFlow {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
 
 @font-face {
   font-family: "Montserrat Alternates";
@@ -10,142 +47,403 @@ $primaryColor: green;
   margin: 0;
   padding: 0;
   font-family: "Montserrat Alternates", sans-serif;
+  box-sizing: border-box;
 }
 
+body {
+  background: $darkBg;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+// ОСНОВНОЙ КОНТЕЙНЕР
 .learning-process {
   width: 100%;
-  height: calc(auto - 20px);
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  padding-top: 100px;
+  padding: 100px 20px 40px;
+  position: relative;
+
+  // Анимированные частицы
+  &::before {
+    content: "";
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-image:
+      radial-gradient(
+        2px 2px at 10% 20%,
+        rgba(126, 240, 126, 0.2),
+        transparent
+      ),
+      radial-gradient(
+        2px 2px at 30% 60%,
+        rgba(126, 240, 126, 0.15),
+        transparent
+      ),
+      radial-gradient(
+        2px 2px at 50% 30%,
+        rgba(126, 240, 126, 0.2),
+        transparent
+      ),
+      radial-gradient(
+        2px 2px at 70% 70%,
+        rgba(126, 240, 126, 0.15),
+        transparent
+      ),
+      radial-gradient(2px 2px at 90% 40%, rgba(126, 240, 126, 0.2), transparent);
+    background-size: 200px 200px;
+    animation: floatParticles 30s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+  }
 }
 
+@keyframes floatParticles {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translate(-20px, 10px) rotate(90deg) scale(1.1);
+  }
+  50% {
+    transform: translate(20px, -10px) rotate(180deg) scale(0.9);
+  }
+  75% {
+    transform: translate(-10px, -20px) rotate(270deg) scale(1.05);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg) scale(1);
+  }
+}
+
+// ЗАГОЛОВКИ - ВАУ версия
 .learning-process_title {
   text-align: center;
+  font-size: 48px;
+  font-weight: 700;
+  position: relative;
   color: white;
-  font-size: 40px;
+  z-index: 1;
+  animation: fadeInDown 1s ease-out;
+
+  span {
+    @include gradient-text;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, $primaryColor, transparent);
+    animation: shimmer 3s ease-in-out infinite;
+  }
+}
+
+@keyframes shimmer {
+  0%,
+  100% {
+    transform: translateX(-50%) scaleX(0.3);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateX(-50%) scaleX(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .learning-process_subtitle {
   text-align: center;
-  font-size: 18px;
+  font-size: 20px;
   color: #7cff9a;
   font-weight: 500;
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 1s ease-out 0.3s both;
+  margin-top: 15px;
+  letter-spacing: 2px;
+  text-shadow: 0 0 30px rgba(126, 240, 126, 0.2);
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// ПРОЦЕСС ЛИНИЯ - ВАУ
 .learning-process_process-line {
   width: 60%;
-  height: 1dvh;
-  border: 2px solid red;
+  height: 8px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 15px;
-  margin-bottom: 10px;
-  background: #284e28;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  background: rgba(126, 240, 126, 0.1);
   border-radius: 25px;
-  border: 1px solid black;
+  border: 1px solid rgba(126, 240, 126, 0.2);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+
+  // Пульсирующий фон
+  &::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+      circle at 30% 50%,
+      rgba(126, 240, 126, 0.05),
+      transparent
+    );
+    animation: pulseBg 3s ease-in-out infinite;
+  }
+}
+
+@keyframes pulseBg {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
 }
 
 .process-line_line {
   width: 20%;
   height: 100%;
-  background: #7ef07e;
+  background: linear-gradient(90deg, #7ef07e, #22c55e);
   border-radius: 25px;
-  border: 1px solid black;
-  transition: 0.8s;
+  border: none;
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 30px rgba(126, 240, 126, 0.4);
+
+  // Светящаяся точка в конце
+  &::after {
+    content: "";
+    position: absolute;
+    right: -4px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    background: #7ef07e;
+    border-radius: 50%;
+    box-shadow: 0 0 30px rgba(126, 240, 126, 0.8);
+    animation: dotPulse 2s ease-in-out infinite;
+  }
 }
 
+@keyframes dotPulse {
+  0%,
+  100% {
+    transform: translateY(-50%) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-50%) scale(1.5);
+    opacity: 0.7;
+  }
+}
+
+// ДЛИТЕЛЬНОСТИ
 .learning-process_durations {
   width: 68%;
-  height: 3%;
+  height: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 10px;
+  position: relative;
+  z-index: 1;
+  flex-wrap: wrap;
 }
 
 .durations_stage-duration {
-  width: auto;
-  height: 100%;
-  background: rgba(#7ef07e, 0.5);
+  background: rgba(126, 240, 126, 0.1);
   border-radius: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 8px 20px 8px 20px;
-  border: 1px solid black;
-  color: white;
+  padding: 10px 24px;
+  border: 1px solid rgba(126, 240, 126, 0.15);
+  color: rgba(255, 255, 255, 0.7);
   font-weight: 600;
-  transition: 0.4s;
-  margin-top: 8px;
+  font-size: 15px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+
+  // Эффект заливки при наведении
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(126, 240, 126, 0.1),
+      transparent
+    );
+    transition: left 0.6s ease;
+  }
+
   &:hover {
-    background: transparent;
-    border: 2px solid #7ef07e;
-    cursor: pointer;
+    transform: translateY(-3px) scale(1.05);
+    border-color: $primaryColor;
+    color: white;
+    @include neon-glow($primaryColor, 0.2);
+
+    &::before {
+      left: 100%;
+    }
   }
 }
 
 .durations_active {
-  background: transparent;
-  border: 2px solid #7ef07e;
-  box-shadow:
-    rgba(0, 255, 102, 0.22) 0px 0px 18px,
-    rgba(0, 255, 102, 0.12) 0px 0px 42px;
+  background: rgba(126, 240, 126, 0.15);
+  border: 2px solid $primaryColor;
+  color: white;
+  @include neon-glow($primaryColor, 0.3);
+  transform: scale(1.05);
 }
 
+// ТАЙМЛАЙН
 .learning-process_process-timeline {
   width: 70%;
-  height: 57.5%;
+  height: auto;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  gap: 24px;
-  margin: 20px 0px 30px 0px;
-  transition: 0.4s;
+  align-items: stretch;
+  gap: 30px;
+  margin: 30px 0;
+  position: relative;
+  z-index: 1;
+  min-height: 500px;
 }
 
 .process-timeline_part {
-  height: 100%;
+  height: auto;
+  animation: fadeInUp 0.8s ease-out 0.5s both;
 }
 
 .process-timeline_part:nth-of-type(1) {
-  width: 45%;
+  width: 50%;
 }
+
 .process-timeline_part:nth-of-type(2) {
-  width: 55%;
-  height: 60dvh;
+  width: 50%;
+  min-height: 400px;
   background-image: url("../images/1-year-technologies.png");
-  background-size: 800px 1050px;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
-  filter: brightness(85%);
-  animation: imageAnimation;
-  animation-duration: 15s;
-  animation-iteration-count: infinite;
+  filter: brightness(90%) drop-shadow(0 0 40px rgba(126, 240, 126, 0.1));
+  animation: floatImage 8s ease-in-out infinite;
+  border-radius: 20px;
+
+  // Glow эффект на изображении
+  &::after {
+    content: "";
+    position: absolute;
+    top: -20%;
+    left: -20%;
+    right: -20%;
+    bottom: -20%;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(126, 240, 126, 0.05),
+      transparent
+    );
+    animation: pulseGlow 4s ease-in-out infinite;
+    pointer-events: none;
+  }
 }
 
+@keyframes floatImage {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(1deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+}
+
+// СТЕЙДЖ КАРТА - ВАУ
 .process-timeline_stage-card {
-  width: calc(100% - 48px);
-  height: calc(auto - 56px);
-  border: 2px solid #7ef07e;
-  border-radius: 28px;
-  padding: 28px 24px;
-  transition: 0.4s;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(126, 240, 126, 0.2);
+  border-radius: 24px;
+  padding: 30px 28px;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: start;
-  gap: 10px;
-  box-shadow:
-    rgba(0, 255, 102, 0.22) 0px 0px 18px,
-    rgba(0, 255, 102, 0.12) 0px 0px 42px;
-  color: white;
-  &:hover {
-    transform: scale(1.01);
-    cursor: default;
+  gap: 16px;
+  @include glass-effect;
+  @include neon-glow($primaryColor, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes borderGlow {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
   }
 }
 
@@ -153,40 +451,42 @@ $primaryColor: green;
   display: none;
 }
 
+// ЗАГОЛОВОК КАРТЫ
 .stage-card_header {
   width: 100%;
-  height: 30%;
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: start;
-  gap: 20px;
+  gap: 12px;
 }
 
 .header_numbering {
   width: 100%;
-  height: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  gap: 5px;
-}
+  gap: 4px;
 
-.header_numbering h2 {
-  font-size: 65px;
-  letter-spacing: 5px;
-  background: linear-gradient(135deg, #2ab82a, #7ef07e, #a0f0a0);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  margin-left: -5px;
-}
+  h2 {
+    font-size: 70px;
+    font-weight: 800;
+    letter-spacing: 6px;
+    @include gradient-text;
+    margin-left: -4px;
+    line-height: 0.9;
+    text-shadow: none;
+  }
 
-.header_numbering h3 {
-  font-size: 16px;
-  letter-spacing: 5px;
-  color: #7ef07e;
+  h3 {
+    font-size: 14px;
+    letter-spacing: 4px;
+    color: $primaryColor;
+    text-transform: uppercase;
+    font-weight: 600;
+    opacity: 0.7;
+  }
 }
 
 .header_title-subtitle {
@@ -195,65 +495,75 @@ $primaryColor: green;
   justify-content: center;
   align-items: start;
   gap: 8px;
+  width: 100%;
 }
 
 .header_stage-title {
-  font-size: 30px;
+  font-size: 32px;
   font-weight: 700;
-  line-height: 1.3;
+  line-height: 1.2;
+  color: white;
+  text-shadow: 0 0 30px rgba(126, 240, 126, 0.1);
 }
 
 .header_stage-duration {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
-  background: rgba(#7ef07e, 0.5);
-  display: inline-block;
-  padding: 4px 12px;
+  background: rgba(126, 240, 126, 0.15);
+  padding: 6px 16px;
   border-radius: 30px;
+  color: $primaryColor;
+  border: 1px solid rgba(126, 240, 126, 0.1);
 }
 
+// ОПИСАНИЕ
 .stage-card_stage-description {
   width: 100%;
   font-size: 16px;
-  color: lightgray;
-  font-weight: 500;
-  line-height: 1.45;
-  padding-bottom: 10px;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 400;
+  line-height: 1.6;
+  padding-bottom: 8px;
 }
 
+// СПИСОК
 .stage-card_stage-list {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
-}
-
-.stage-card_stage-list li {
+  gap: 12px;
   width: 100%;
-  height: auto;
-  font-size: 18px;
-  position: relative;
-  line-height: 1.4;
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  gap: 5px;
-  font-size: 18px;
-  background: rgba(126, 240, 126, 0.1);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(126, 240, 126, 0.2);
-  border-radius: 15px;
-  padding: 10px 16px;
-  transition: 0.4s;
-  &:hover {
-    border: 1px solid #7ef07e;
-  }
-}
 
-.stage-card_stage-list li span {
-  color: #7cff9a;
-  font-size: 20px;
-  margin-right: 10px;
+  li {
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    background: rgba(126, 240, 126, 0.05);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(126, 240, 126, 0.08);
+    border-radius: 14px;
+    padding: 12px 18px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: default;
+
+    &:hover {
+      border-color: $primaryColor;
+      background: rgba(126, 240, 126, 0.1);
+      transform: translateX(8px);
+      @include neon-glow($primaryColor, 0.1);
+    }
+
+    span {
+      color: $primaryColor;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+  }
 }
 
 .stage-list_info {
@@ -261,279 +571,421 @@ $primaryColor: green;
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  gap: 5px;
+  gap: 4px;
+  flex: 1;
+
+  h3 {
+    font-size: 17px;
+    font-weight: 500;
+    color: white;
+  }
+
+  h4 {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 13px;
+    font-weight: 400;
+  }
 }
 
-.stage-list_info h3 {
-  font-size: 18px;
-  font-weight: 500;
-}
-
-.stage-list_info h4 {
-  color: lightgrey;
-  font-size: 14px;
-  font-weight: 500;
-}
-
+// ФИНАЛЬНЫЙ БЛОК - ВАУ
 .learning-process_final-block {
   width: 80.5%;
-  border-radius: 28px;
-  padding: 32px 36px;
-  margin-bottom: 30px;
-  border: 2px solid #7ef07e;
-  box-shadow:
-    rgba(0, 255, 102, 0.22) 0px 0px 18px,
-    rgba(0, 255, 102, 0.12) 0px 0px 42px;
+  max-width: 1200px;
+  border-radius: 24px;
+  padding: 36px 42px;
+  margin: 20px 0 30px;
+  border: 1px solid rgba(126, 240, 126, 0.2);
+  @include glass-effect;
+  @include neon-glow($primaryColor, 0.12);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 30px;
   color: white;
-  text-shadow: rgba(0, 0, 0, 0.75) 0px 0px 10px;
-  transition: 0.4s;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+
+  // Анимированный фон
+  &::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 60%;
+    height: 200%;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(126, 240, 126, 0.03),
+      transparent
+    );
+    animation: pulseGlow 6s ease-in-out infinite;
+    pointer-events: none;
+  }
+
   &:hover {
-    transform: scale(1.03);
+    transform: translateY(-5px) scale(1.02);
+    @include neon-glow($primaryColor, 0.25);
+    border-color: rgba(126, 240, 126, 0.3);
   }
 }
 
 .final-info_title {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 700;
   margin-bottom: 10px;
   display: flex;
   justify-content: start;
-  align-items: end;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-image: url("../images/diploma.png");
+    background-size: 30px 30px;
+    background-position: center;
+    animation: bounce 2s ease-in-out infinite;
+  }
 }
 
-.final-info_title::before {
-  content: "";
-  display: block;
-  width: 40px;
-  height: 40px;
-  background-image: url(../images/diploma.png);
-  background-size: cover;
-  background-position: center;
-  margin-right: 10px;
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
-.final-block_final-info p {
-  font-size: 18px;
-  margin-bottom: 8px;
+.final-block_final-info {
+  position: relative;
+  z-index: 1;
+
+  p {
+    font-size: 18px;
+    margin-bottom: 6px;
+    color: rgba(255, 255, 255, 0.8);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .final-block_certificate-badge {
-  background: rgba(#7ef07e, 0.5);
-  padding: 14px 28px;
+  background: linear-gradient(
+    135deg,
+    rgba(126, 240, 126, 0.2),
+    rgba(34, 197, 94, 0.2)
+  );
+  padding: 16px 32px;
   border-radius: 60px;
   color: white;
   font-weight: 700;
   font-size: 18px;
   letter-spacing: 0.5px;
   white-space: nowrap;
-  text-shadow: rgba(0, 0, 0, 0.75) 0px 0px 10px;
-  box-shadow: 0 6px 14px rgba(30, 95, 122, 0.25);
+  border: 1px solid rgba(126, 240, 126, 0.2);
+  @include neon-glow($primaryColor, 0.15);
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 1;
+
+  &:hover {
+    transform: scale(1.05);
+    @include neon-glow($primaryColor, 0.3);
+  }
 }
 
+// РАСПИСАНИЕ - ВАУ
 .learning-process_schedule-box {
-  border: 2px solid #7ef07e;
-  border-radius: 28px;
-  padding: 28px 32px;
+  border: 1px solid rgba(126, 240, 126, 0.15);
+  border-radius: 24px;
+  padding: 28px 36px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  transition: 0.4s;
+  @include glass-effect;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 1;
+  width: 80.5%;
+  max-width: 1200px;
+
   &:hover {
-    transform: scale(1.03);
+    transform: translateY(-4px);
+    @include neon-glow($primaryColor, 0.12);
+    border-color: rgba(126, 240, 126, 0.25);
   }
 }
 
 .schedule-box_text {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 10px 20px;
+  gap: 12px 20px;
   color: white;
+  flex: 1;
 }
 
 .text_schedule-label {
   font-weight: 700;
-  font-size: 18px;
-  background: rgba(#7ef07e, 0.5);
-  padding: 6px 18px;
+  font-size: 16px;
+  background: rgba(126, 240, 126, 0.1);
+  padding: 6px 20px;
   border-radius: 40px;
+  color: $primaryColor;
+  border: 1px solid rgba(126, 240, 126, 0.1);
 }
 
 .text_schedule-detail {
   font-size: 18px;
   font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .schedule-box_accent-hours {
   font-weight: 800;
-  background: rgba(#7ef07e, 0.5);
-  padding: 4px 12px;
+  background: rgba(126, 240, 126, 0.12);
+  padding: 8px 18px;
   border-radius: 32px;
   font-size: 17px;
-  color: white;
+  color: $primaryColor;
+  border: 1px solid rgba(126, 240, 126, 0.1);
+  @include neon-glow($primaryColor, 0.05);
 }
 
+// ФУТЕР
 .learning-process_footer-text {
   margin-top: 20px;
   font-size: 16px;
-  color: #7ef07e;
+  color: rgba(126, 240, 126, 0.6);
   text-align: center;
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 1s ease-out 1s both;
 }
 
-@keyframes imageAnimation {
-  0%,
-  100% {
-    top: -20px;
-    left: 30px;
-    transform: rotate(5deg);
-  }
-  47% {
-    top: 80px;
-    left: 30px;
-    transform: rotate(-5deg);
-  }
-  52% {
-    top: 80px;
-    left: 30px;
-    transform: rotate(-5deg);
-  }
-}
-
-@media (max-width: "1450px") {
+// АДАПТИВ
+@media (max-width: 1450px) {
   .process-timeline_part:nth-of-type(1) {
     width: 50%;
   }
-
   .process-timeline_part:nth-of-type(2) {
     width: 50%;
-    background-size: 750px 1000px;
-    background-position: -110px 50%;
+    background-size: 80% auto;
+    background-position: center;
   }
 }
 
-@media (max-width: "1386px") {
+@media (max-width: 1200px) {
   .learning-process_process-timeline {
-    width: 80%;
+    width: 85%;
   }
-
-  .process-timeline_part:nth-of-type(2) {
-    width: 50%;
-    background-size: 700px 950px;
-    background-position: -110px 50%;
+  .learning-process_title {
+    font-size: 40px;
   }
-
   .header_numbering h2 {
     font-size: 60px;
   }
-
-  .header_numbering h3 {
-    font-size: 14px;
-  }
-
-  .process-timeline_stage-card {
-    height: auto;
+  .header_stage-title {
+    font-size: 28px;
   }
 }
 
-@media (max-width: "1200px") {
-  .learning-process_process-timeline {
-    width: 90%;
-  }
-}
-
-@media (max-width: "1078px") {
-  .learning-process_schedule-box {
-    width: 65%;
-    justify-content: center;
-  }
-
-  .final-block_final-info p {
-    font-size: 16px;
-  }
-}
-
-@media (max-width: "1048px") {
+@media (max-width: 1048px) {
   .process-timeline_part:nth-of-type(1) {
-    width: 75%;
+    width: 80%;
   }
-
   .process-timeline_part:nth-of-type(2) {
     display: none;
   }
-
   .learning-process_process-timeline {
+    justify-content: center;
+  }
+  .learning-process_durations {
+    width: 85%;
     justify-content: center;
   }
 }
 
-@media (max-width: "990px") {
-  .learning-process_schedule-box {
-    width: 75%;
-  }
-}
-
-@media (max-width: "864px") {
-  .learning-process_schedule-box {
-    width: 85%;
-  }
-}
-
-@media (max-width: "768px") {
-  .process-timeline_part:nth-of-type(1) {
-    width: 90%;
+@media (max-width: 768px) {
+  .learning-process {
+    padding: 80px 15px 30px;
   }
 
-  .final-block_final-info p {
-    display: none;
+  .learning-process_title {
+    font-size: 30px;
+
+    &::after {
+      width: 80%;
+    }
+  }
+
+  .learning-process_subtitle {
+    font-size: 16px;
   }
 
   .learning-process_process-line {
-    width: 80%;
+    width: 85%;
   }
 
   .learning-process_durations {
     width: 90%;
+    gap: 8px;
+
+    .durations_stage-duration {
+      font-size: 12px;
+      padding: 8px 16px;
+    }
   }
 
-  .durations_stage-duration {
+  .process-timeline_part:nth-of-type(1) {
+    width: 95%;
+  }
+
+  .process-timeline_stage-card {
+    padding: 20px 18px;
+
+    &:hover {
+      transform: translateY(-4px) scale(1.01);
+    }
+  }
+
+  .header_numbering h2 {
+    font-size: 48px;
+  }
+  .header_stage-title {
+    font-size: 22px;
+  }
+
+  .stage-card_stage-list li {
+    padding: 10px 14px;
     font-size: 14px;
+
+    &:hover {
+      transform: translateX(4px);
+    }
+  }
+
+  .stage-list_info h3 {
+    font-size: 15px;
+  }
+  .stage-list_info h4 {
+    font-size: 12px;
+  }
+
+  .learning-process_final-block {
+    width: 90%;
+    padding: 24px 20px;
+    flex-direction: column;
+    text-align: center;
+
+    &:hover {
+      transform: translateY(-3px) scale(1.01);
+    }
+  }
+
+  .final-info_title {
+    font-size: 20px;
+    justify-content: center;
+
+    &::before {
+      font-size: 28px;
+    }
+  }
+
+  .final-block_final-info p {
+    font-size: 15px;
+    display: block !important;
+  }
+
+  .final-block_certificate-badge {
+    font-size: 14px;
+    padding: 12px 24px;
+    white-space: normal;
+  }
+
+  .learning-process_schedule-box {
+    width: 90%;
+    padding: 20px 18px;
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
   }
 
   .schedule-box_text {
     flex-direction: column;
     align-items: center;
+    gap: 10px;
   }
 
-  .learning-process_schedule-box {
-    width: 55%;
-    flex-direction: column;
-    justify-content: center;
+  .text_schedule-detail {
+    font-size: 15px;
   }
-
   .schedule-box_accent-hours {
     font-size: 14px;
   }
+}
+
+@media (max-width: 480px) {
+  .learning-process_title {
+    font-size: 24px;
+  }
+  .learning-process_subtitle {
+    font-size: 14px;
+  }
+
+  .header_numbering h2 {
+    font-size: 38px;
+  }
+  .header_stage-title {
+    font-size: 18px;
+  }
+
+  .process-timeline_stage-card {
+    padding: 16px 14px;
+    border-radius: 18px;
+  }
+
+  .stage-card_stage-list li {
+    padding: 8px 12px;
+    font-size: 13px;
+    border-radius: 10px;
+  }
 
   .learning-process_final-block {
-    width: 70%;
+    padding: 20px 16px;
+    border-radius: 18px;
   }
 
+  .final-info_title {
+    font-size: 18px;
+  }
   .final-block_certificate-badge {
-    font-size: 16px;
+    font-size: 13px;
+    padding: 10px 18px;
   }
 
-  .final-info_title::before {
-    content: "";
-    display: none;
+  .learning-process_schedule-box {
+    padding: 16px 14px;
+    border-radius: 18px;
   }
 
-  .learning-process_subtitle {
-    width: 80%;
+  .text_schedule-label {
+    font-size: 13px;
+    padding: 4px 14px;
+  }
+  .text_schedule-detail {
+    font-size: 14px;
   }
 }
