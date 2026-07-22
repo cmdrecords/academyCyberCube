@@ -1,0 +1,903 @@
+// ============================================
+// FOOTER - WOW VERSION
+// ============================================
+
+$primaryColor: #7ef07e;
+$darkBg: #0a0f0a;
+$footerBg: #050805;
+
+@mixin glass-effect {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(126, 240, 126, 0.08);
+}
+
+@mixin neon-glow($color: $primaryColor, $intensity: 0.3) {
+  box-shadow:
+    0 0 20px rgba($color, $intensity),
+    0 0 40px rgba($color, $intensity * 0.5),
+    0 0 80px rgba($color, $intensity * 0.2);
+}
+
+@mixin gradient-text {
+  background: linear-gradient(135deg, #7ef07e, #4ade80, #22c55e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@mixin neon-border {
+  border: 1px solid rgba(126, 240, 126, 0.15);
+  box-shadow:
+    0 0 15px rgba(126, 240, 126, 0.05),
+    inset 0 0 15px rgba(126, 240, 126, 0.03);
+}
+
+// ============================================
+// ОСНОВНОЙ ФУТЕР
+// ============================================
+
+.footer {
+  width: 100%;
+  background: $footerBg;
+  position: relative;
+  overflow: hidden;
+  margin-top: 60px;
+  border-top: 1px solid rgba(126, 240, 126, 0.08);
+
+  // Анимированный градиентный фон
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+      radial-gradient(
+        ellipse at 20% 0%,
+        rgba(126, 240, 126, 0.03) 0%,
+        transparent 60%
+      ),
+      radial-gradient(
+        ellipse at 80% 100%,
+        rgba(126, 240, 126, 0.03) 0%,
+        transparent 60%
+      );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  // Парящие частицы
+  &::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-image:
+      radial-gradient(
+        1px 1px at 10% 20%,
+        rgba(126, 240, 126, 0.1),
+        transparent
+      ),
+      radial-gradient(
+        1px 1px at 30% 60%,
+        rgba(126, 240, 126, 0.08),
+        transparent
+      ),
+      radial-gradient(
+        1px 1px at 50% 30%,
+        rgba(126, 240, 126, 0.1),
+        transparent
+      ),
+      radial-gradient(
+        1px 1px at 70% 70%,
+        rgba(126, 240, 126, 0.08),
+        transparent
+      ),
+      radial-gradient(1px 1px at 90% 40%, rgba(126, 240, 126, 0.1), transparent);
+    background-size: 150px 150px;
+    animation: floatParticles 25s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.5;
+  }
+}
+
+@keyframes floatParticles {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(-15px, 10px) rotate(90deg);
+  }
+  50% {
+    transform: translate(15px, -10px) rotate(180deg);
+  }
+  75% {
+    transform: translate(-10px, -15px) rotate(270deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+
+// ============================================
+// ВЕРХНЯЯ ЧАСТЬ ФУТЕРА
+// ============================================
+
+.footer_top {
+  position: relative;
+  z-index: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 60px 40px 40px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 40px;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 40px 30px 30px;
+  }
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 30px 20px 20px;
+  }
+}
+
+// ============================================
+// КОЛОНКА - О НАС
+// ============================================
+
+.footer_column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  animation: fadeInUp 0.8s ease-out both;
+
+  &:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  &:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  &:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  &:nth-child(4) {
+    animation-delay: 0.4s;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.footer_logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+
+  .logo_icon {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(
+      135deg,
+      rgba(126, 240, 126, 0.15),
+      rgba(34, 197, 94, 0.1)
+    );
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(126, 240, 126, 0.15);
+    transition: all 0.4s ease;
+
+    svg {
+      width: 28px;
+      height: 28px;
+      fill: none;
+      stroke: $primaryColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: all 0.4s ease;
+    }
+
+    &:hover {
+      transform: rotate(-10deg) scale(1.1);
+      @include neon-glow($primaryColor, 0.2);
+      border-color: $primaryColor;
+    }
+  }
+
+  .logo_text {
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 1px;
+
+    span {
+      @include gradient-text;
+    }
+  }
+}
+
+.footer_description {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 15px;
+  line-height: 1.7;
+  max-width: 320px;
+
+  .highlight {
+    color: $primaryColor;
+    font-weight: 500;
+  }
+}
+
+// ============================================
+// СОЦИАЛЬНЫЕ СЕТИ
+// ============================================
+
+.footer_social {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.social_link {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(126, 240, 126, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+
+  // Эффект заливки при наведении
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(126, 240, 126, 0.1),
+      transparent
+    );
+    transition: left 0.6s ease;
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+    transition: all 0.4s ease;
+  }
+
+  &:hover {
+    transform: translateY(-4px) scale(1.1);
+    border-color: $primaryColor;
+    color: $primaryColor;
+    @include neon-glow($primaryColor, 0.15);
+    background: rgba(126, 240, 126, 0.05);
+
+    &::before {
+      left: 100%;
+    }
+
+    svg {
+      transform: scale(1.1);
+    }
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+// ============================================
+// ЗАГОЛОВКИ КОЛОНОК
+// ============================================
+
+.footer_heading {
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 4px;
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: linear-gradient(90deg, $primaryColor, transparent);
+    transition: width 0.4s ease;
+  }
+
+  .footer_column:hover &::after {
+    width: 60px;
+  }
+}
+
+// ============================================
+// КОЛОНКА - ССЫЛКИ
+// ============================================
+
+.footer_links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  li {
+    opacity: 0;
+    animation: fadeInLinks 0.5s ease-out forwards;
+
+    @for $i from 1 through 10 {
+      &:nth-child(#{$i}) {
+        animation-delay: #{0.1 * $i + 0.3}s;
+      }
+    }
+  }
+}
+
+@keyframes fadeInLinks {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.footer_link {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  padding-left: 0;
+
+  &::before {
+    content: "›";
+    font-size: 20px;
+    color: $primaryColor;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+  }
+
+  &:hover {
+    color: white;
+    transform: translateX(8px);
+
+    &::before {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .link_badge {
+    font-size: 10px;
+    background: rgba(126, 240, 126, 0.15);
+    color: $primaryColor;
+    padding: 2px 10px;
+    border-radius: 20px;
+    border: 1px solid rgba(126, 240, 126, 0.1);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: rgba(126, 240, 126, 0.2);
+      @include neon-glow($primaryColor, 0.1);
+    }
+  }
+}
+
+// ============================================
+// КОЛОНКА - КОНТАКТЫ
+// ============================================
+
+.footer_contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact_item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.01);
+
+  .contact_icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: rgba(126, 240, 126, 0.05);
+    border: 1px solid rgba(126, 240, 126, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.4s ease;
+
+    svg {
+      width: 18px;
+      height: 18px;
+      stroke: $primaryColor;
+      fill: none;
+      stroke-width: 2;
+    }
+  }
+
+  .contact_text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    .label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    .value {
+      color: rgba(255, 255, 255, 0.7);
+      font-weight: 500;
+    }
+  }
+
+  &:hover {
+    color: white;
+    transform: translateX(4px);
+    background: rgba(126, 240, 126, 0.03);
+    border-radius: 10px;
+
+    .contact_icon {
+      border-color: rgba(126, 240, 126, 0.2);
+      @include neon-glow($primaryColor, 0.1);
+    }
+
+    .contact_text .value {
+      color: white;
+    }
+  }
+}
+
+// ============================================
+// НОВОСТНАЯ ПОДПИСКА
+// ============================================
+
+.footer_newsletter {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  p {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
+
+.newsletter_form {
+  display: flex;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 12px;
+  padding: 4px;
+  border: 1px solid rgba(126, 240, 126, 0.08);
+  transition: all 0.4s ease;
+
+  &:focus-within {
+    border-color: rgba(126, 240, 126, 0.2);
+    @include neon-glow($primaryColor, 0.05);
+  }
+
+  .newsletter_input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 12px 16px;
+    color: white;
+    font-size: 14px;
+    outline: none;
+    min-width: 0;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.3);
+    }
+  }
+
+  .newsletter_button {
+    padding: 10px 20px;
+    background: linear-gradient(
+      135deg,
+      rgba(126, 240, 126, 0.15),
+      rgba(34, 197, 94, 0.1)
+    );
+    border: 1px solid rgba(126, 240, 126, 0.1);
+    border-radius: 8px;
+    color: $primaryColor;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(126, 240, 126, 0.1),
+        transparent
+      );
+      transition: left 0.6s ease;
+    }
+
+    &:hover {
+      background: linear-gradient(
+        135deg,
+        rgba(126, 240, 126, 0.25),
+        rgba(34, 197, 94, 0.15)
+      );
+      transform: scale(1.02);
+      @include neon-glow($primaryColor, 0.15);
+
+      &::before {
+        left: 100%;
+      }
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+}
+
+.newsletter_success {
+  color: $primaryColor;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  animation: fadeInUp 0.5s ease-out;
+
+  svg {
+    width: 18px;
+    height: 18px;
+    stroke: $primaryColor;
+    fill: none;
+  }
+}
+
+// ============================================
+// НИЖНЯЯ ЧАСТЬ ФУТЕРА
+// ============================================
+
+.footer_bottom {
+  position: relative;
+  z-index: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px 40px;
+  border-top: 1px solid rgba(126, 240, 126, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+
+  @media (max-width: 640px) {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    gap: 12px;
+  }
+}
+
+.footer_copyright {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 14px;
+
+  .heart {
+    color: #ff6b6b;
+    display: inline-block;
+    animation: heartbeat 1.5s ease-in-out infinite;
+  }
+
+  .brand {
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 500;
+
+    &:hover {
+      color: $primaryColor;
+    }
+  }
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.footer_legal {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+
+  a {
+    color: rgba(255, 255, 255, 0.3);
+    text-decoration: none;
+    font-size: 13px;
+    transition: all 0.3s ease;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: $primaryColor;
+      transition: width 0.3s ease;
+    }
+
+    &:hover {
+      color: white;
+
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+
+  .separator {
+    color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+// ============================================
+// КНОПКА "НАВЕРХ"
+// ============================================
+
+.scroll_top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  background: rgba(126, 240, 126, 0.1);
+  border: 1px solid rgba(126, 240, 126, 0.15);
+  color: $primaryColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: translateY(20px) scale(0.8);
+  pointer-events: none;
+  z-index: 100;
+  @include glass-effect;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: all;
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2.5;
+    transition: all 0.4s ease;
+  }
+
+  &:hover {
+    transform: translateY(-4px) scale(1.05);
+    @include neon-glow($primaryColor, 0.2);
+    border-color: $primaryColor;
+    background: rgba(126, 240, 126, 0.15);
+
+    svg {
+      transform: translateY(-4px);
+    }
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+}
+
+// ============================================
+// АДАПТИВНЫЕ ДОПОЛНЕНИЯ
+// ============================================
+
+@media (max-width: 768px) {
+  .footer_top {
+    grid-template-columns: 1fr 1fr;
+    padding: 30px 20px 20px;
+    gap: 25px;
+  }
+
+  .footer_description {
+    max-width: 100%;
+    font-size: 14px;
+  }
+
+  .footer_logo .logo_text {
+    font-size: 20px;
+  }
+
+  .footer_heading {
+    font-size: 16px;
+  }
+
+  .footer_link {
+    font-size: 14px;
+  }
+
+  .contact_item {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+
+  .newsletter_form {
+    flex-direction: column;
+    background: transparent;
+    padding: 0;
+    border: none;
+
+    .newsletter_input {
+      padding: 12px 16px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(126, 240, 126, 0.08);
+      border-radius: 10px;
+    }
+
+    .newsletter_button {
+      padding: 12px;
+    }
+  }
+
+  .scroll_top {
+    width: 44px;
+    height: 44px;
+    bottom: 20px;
+    right: 20px;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .footer_top {
+    grid-template-columns: 1fr;
+    padding: 25px 16px 16px;
+    gap: 20px;
+  }
+
+  .footer_logo .logo_text {
+    font-size: 18px;
+  }
+
+  .footer_description {
+    font-size: 13px;
+  }
+
+  .social_link {
+    width: 40px;
+    height: 40px;
+  }
+
+  .footer_copyright {
+    font-size: 12px;
+  }
+
+  .footer_legal a {
+    font-size: 12px;
+  }
+
+  .footer_bottom {
+    padding: 16px;
+  }
+}
+
+// ============================================
+// ДОПОЛНИТЕЛЬНЫЕ АНИМАЦИИ
+// ============================================
+
+// Анимация пульсации для иконок
+@keyframes pulseIcon {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+// Анимация появления элементов при скролле
+@keyframes scrollReveal {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.footer_column {
+  &.reveal {
+    animation: scrollReveal 0.8s ease-out forwards;
+  }
+}
