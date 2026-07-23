@@ -1,4 +1,7 @@
-$primaryColor: green;
+$primaryColor: #7ef07e;
+$primaryLight: #b8ffb8;
+$primaryDark: #22c55e;
+$glowColor: rgba(126, 240, 126, 0.3);
 
 @font-face {
   font-family: "Montserrat Alternates";
@@ -16,8 +19,13 @@ h1 {
   font-family: "Montserrat Alternates", sans-serif;
 }
 
+header {
+  display: flex;
+  justify-content: center;
+}
+
 nav {
-  width: 100%;
+  width: 75%;
   height: 12dvh;
   position: absolute;
   color: white;

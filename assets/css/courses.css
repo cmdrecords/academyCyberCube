@@ -155,6 +155,10 @@ body {
   cursor: pointer;
   min-height: 320px;
 }
+.enclosure-block_course-block:hover {
+  transform: scale(1.02);
+  border: 1px solid #7ef07e;
+}
 
 @keyframes borderGlow {
   0%, 100% {

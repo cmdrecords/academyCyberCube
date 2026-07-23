@@ -1,4 +1,45 @@
-$primaryColor: green;
+// ============================================
+// SIGN UP - WOW VERSION
+// ============================================
+
+$primaryColor: #7ef07e;
+$darkBg: #0a0f0a;
+$cardBg: rgba(126, 240, 126, 0.05);
+$glowColor: rgba(126, 240, 126, 0.3);
+
+@mixin glass-effect {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(126, 240, 126, 0.1);
+}
+
+@mixin neon-glow($color: $primaryColor, $intensity: 0.3) {
+  box-shadow:
+    0 0 20px rgba($color, $intensity),
+    0 0 40px rgba($color, $intensity * 0.5),
+    0 0 80px rgba($color, $intensity * 0.2),
+    inset 0 0 20px rgba($color, $intensity * 0.05);
+}
+
+@mixin gradient-text {
+  background: linear-gradient(135deg, #aafdaa, #7ef07e, #4ade80, #22c55e);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientFlow 4s ease-in-out infinite;
+}
+
+@keyframes gradientFlow {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
 
 @font-face {
   font-family: "Montserrat Alternates";
@@ -10,64 +51,217 @@ $primaryColor: green;
   font-family: "Montserrat Alternates", sans-serif;
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
+
+body {
+  background: $darkBg;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+// ============================================
+// ОСНОВНОЙ КОНТЕЙНЕР
+// ============================================
 
 .sign-up {
   width: 100%;
-  height: 60dvh;
+  height: 75dvh;
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: center;
+  position: relative;
+  background:
+    radial-gradient(
+      ellipse at 30% 40%,
+      rgba(126, 240, 126, 0.03) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse at 70% 60%,
+      rgba(126, 240, 126, 0.03) 0%,
+      transparent 60%
+    );
 }
 
+@keyframes floatParticles {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translate(-20px, 15px) rotate(90deg) scale(1.1);
+  }
+  50% {
+    transform: translate(20px, -15px) rotate(180deg) scale(0.9);
+  }
+  75% {
+    transform: translate(-15px, -20px) rotate(270deg) scale(1.05);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg) scale(1);
+  }
+}
+
+@keyframes floatCircle {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-50px, 30px) scale(1.2);
+  }
+}
+
+// ============================================
+// ФОРМА - WOW VERSION
+// ============================================
+
 .sign-up_form {
-  width: 35%;
-  height: 85%;
-  background: rgba(#7ef07e, 0.1);
-  border-radius: 15px;
-  padding: 25px;
-  border: 1px solid #7ef07e;
-  box-shadow:
-    rgba(0, 255, 102, 0.22) 0px 0px 18px,
-    rgba(0, 255, 102, 0.12) 0px 0px 42px;
+  width: 40%;
+  max-width: 550px;
+  min-height: 550px;
+  background: rgba(126, 240, 126, 0.03);
+  @include glass-effect;
+  border-radius: 24px;
+  padding: 40px 35px 35px;
+  border: 1px solid rgba(126, 240, 126, 0.1);
+  @include neon-glow($primaryColor, 0.05);
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  gap: 5px;
-  color: #7ef07e;
+  gap: 8px;
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 0.8s ease-out both;
+  overflow: hidden;
+  transition: 0.4s;
+
+  &:hover {
+    border: 1px solid #7ef07e;
+  }
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+// ============================================
+// ЗАГОЛОВКИ
+// ============================================
+
 .sign-up_form h2 {
-  font-size: 50px;
-  letter-spacing: 7px;
+  font-size: 52px;
+  letter-spacing: 8px;
   text-align: center;
-  background: linear-gradient(135deg, #aafdaa, #7ef07e, #3d753d);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
+  @include gradient-text;
+  font-weight: 800;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 0 60px rgba(126, 240, 126, 0.1);
 }
 
 .sign-up_form h3 {
   font-size: 16px;
-  letter-spacing: 2px;
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 7px;
+  letter-spacing: 3px;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 400;
+  position: relative;
+  z-index: 1;
+  margin-top: -4px;
+
+  // Анимированное подчеркивание
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, $primaryColor, transparent);
+    animation: shimmerSignUp 3s ease-in-out infinite;
+  }
 }
 
+@keyframes shimmerSignUp {
+  0%,
+  100% {
+    width: 40px;
+    opacity: 0.3;
+  }
+  50% {
+    width: 150px;
+    opacity: 1;
+  }
+}
+
+// ============================================
+// ПОЛЯ ВВОДА - WOW
+// ============================================
+
 .form_input-container {
-  width: 85%;
-  height: 9%;
-  margin-top: 25px;
+  width: 90%;
+  height: 55px;
+  margin-top: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 14px;
-  border: 2px solid #7ef07e;
-  border-radius: 50px;
-  padding: 5px 25px 5px 25px;
-  box-shadow: inset 0px 0px 20px black;
+  border: 2px solid rgba(126, 240, 126, 0.1);
+  border-radius: 60px;
+  padding: 0 20px 0 25px;
+  background: rgba(255, 255, 255, 0.02);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 1;
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.3);
+
+  // Эффект фокуса
+  &:focus-within {
+    border-color: $primaryColor;
+    @include neon-glow($primaryColor, 0.08);
+    background: rgba(126, 240, 126, 0.03);
+    transform: scale(1.02);
+
+    .name-icon,
+    .phone-icon {
+      fill: $primaryColor;
+      stroke: $primaryColor;
+    }
+  }
+
+  // Пульсирующий фон
+  &::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    border-radius: 60px;
+    background: linear-gradient(
+      45deg,
+      transparent,
+      rgba(126, 240, 126, 0.05),
+      transparent
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  &:focus-within::before {
+    opacity: 1;
+  }
 }
 
 .input-container_input {
@@ -75,117 +269,289 @@ $primaryColor: green;
   height: 100%;
   outline: none;
   background: none;
-  color: #7ef07e;
-  font-size: 18px;
+  color: white;
+  font-size: 17px;
   border: none;
+  font-weight: 500;
+
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.2);
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    transition: opacity 0.3s ease;
+  }
+
+  &:focus::placeholder {
+    opacity: 0.3;
+  }
+
+  // Автозаполнение
+  &:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px rgba(10, 15, 10, 0.95) inset !important;
+    -webkit-text-fill-color: white !important;
+  }
 }
 
-.input-container_input::placeholder {
-  color: rgba(#7ef07e, 0.5);
+// ============================================
+// ИКОНКИ ПОЛЕЙ
+// ============================================
+
+.name-icon,
+.phone-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  stroke: rgba(126, 240, 126, 0.3);
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+  .form_input-container:hover & {
+    stroke: rgba(126, 240, 126, 0.5);
+  }
 }
+
+// ============================================
+// КНОПКА - WOW
+// ============================================
 
 .form_button {
   width: 95%;
-  height: 11%;
-  background: #7ef07e;
-  border: 2px solid #7ef07e;
-  border-radius: 50px;
+  height: 52px;
+  background: linear-gradient(135deg, rgba(126, 240, 126, 0.9), #22c55e);
+  border: none;
+  border-radius: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 20px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  color: black;
-  transition: 0.4s;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #000;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   margin-top: 25px;
-  box-shadow: inset 0px 0px 20px black;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow:
+    0 4px 20px rgba(126, 240, 126, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
+  // Градиентный оверлей при наведении
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: left 0.6s ease;
+  }
+
+  // Вторая волна
+  &::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.05),
+      transparent 60%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
   &:hover {
-    cursor: pointer;
-    color: #7ef07e;
-    background: transparent;
+    transform: translateY(-3px) scale(1.03);
+    @include neon-glow($primaryColor, 0.3);
+    background: linear-gradient(135deg, #7ef07e, #16a34a);
+    color: #000;
+    box-shadow:
+      0 8px 40px rgba(126, 240, 126, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+
+    &::before {
+      left: 100%;
+    }
+
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  &:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 10px rgba(126, 240, 126, 0.2);
+  }
+
+  // Текст кнопки
+  span {
+    position: relative;
+    z-index: 1;
+  }
+
+  // Иконка стрелки
+  .button_arrow {
+    display: inline-block;
+    margin-left: 8px;
+    transition: transform 0.4s ease;
+
+    .form_button:hover & {
+      transform: translateX(6px) rotate(-10deg);
+    }
   }
 }
 
-.name-icon {
-  transition: 0.4s;
-}
-
-.phone-icon {
-  transition: 0.4s;
-}
+// ============================================
+// СТАТУС
+// ============================================
 
 .status {
-  margin-top: 10px;
+  margin-top: 12px;
   text-align: center;
-  font-size: 18px;
-  color: #7ef07e;
-  font-weight: 700;
+  font-size: 16px;
+  color: $primaryColor;
+  font-weight: 600;
+  min-height: 24px;
+  position: relative;
+  z-index: 1;
+  padding: 4px 16px;
+  border-radius: 30px;
+  background: rgba(126, 240, 126, 0.03);
+  border: 1px solid rgba(126, 240, 126, 0.05);
+  transition: all 0.4s ease;
+
+  // Анимация появления
+  &.show {
+    animation: statusPop 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  // Стили для разных состояний
+  &.success {
+    color: #4ade80;
+    border-color: rgba(74, 222, 128, 0.2);
+    @include neon-glow(rgba(74, 222, 128, 0.2), 0.1);
+  }
+
+  &.error {
+    color: #f87171;
+    border-color: rgba(248, 113, 113, 0.2);
+    @include neon-glow(rgba(248, 113, 113, 0.2), 0.1);
+  }
+
+  &.loading {
+    color: rgba(255, 255, 255, 0.5);
+    border-color: rgba(255, 255, 255, 0.05);
+    animation: pulseText 1.5s ease-in-out infinite;
+  }
 }
 
-/* ===== ПЛАНШЕТЫ (до 1024px) ===== */
+@keyframes statusPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(-10px);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes pulseText {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+// ============================================
+// ДЕКОРАТИВНЫЙ ЭЛЕМЕНТ
+// ============================================
+
+.sign-up_form .form_decor {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.03;
+
+  &.decor-1 {
+    width: 200px;
+    height: 200px;
+    top: -60px;
+    right: -60px;
+    background: radial-gradient(circle, $primaryColor, transparent);
+    animation: floatDecor 8s ease-in-out infinite;
+  }
+
+  &.decor-2 {
+    width: 150px;
+    height: 150px;
+    bottom: -40px;
+    left: -40px;
+    background: radial-gradient(circle, $primaryColor, transparent);
+    animation: floatDecor 10s ease-in-out infinite reverse;
+  }
+}
+
+@keyframes floatDecor {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(20px, -20px) scale(1.2);
+  }
+}
+
+// ============================================
+// АДАПТИВ
+// ============================================
+
+/* Планшеты */
 @media screen and (max-width: 1024px) {
   .sign-up_form {
     width: 55%;
-    padding: 30px 20px;
-  }
-
-  .sign-up_form h2 {
-    font-size: 40px;
-    letter-spacing: 5px;
-  }
-
-  .sign-up_form h3 {
-    font-size: 15px;
-  }
-
-  .form_input-container {
-    width: 90%;
-    padding: 5px 20px;
-  }
-
-  .name-icon,
-  .phone-icon {
-    width: 30px;
-    height: 30px;
-  }
-}
-
-/* ===== МОБИЛЬНЫЕ ТЕЛЕФОНЫ (до 768px) ===== */
-@media screen and (max-width: 768px) {
-  .sign-up {
-    height: 60dvh;
-    padding: 15px;
-  }
-
-  .sign-up_form {
-    width: 65%;
-    padding: 10px 15px 10px 15px;
+    padding: 35px 30px 30px;
+    min-height: 480px;
   }
 
   .sign-up_form h2 {
     font-size: 42px;
-    letter-spacing: 3px;
+    letter-spacing: 6px;
   }
 
   .sign-up_form h3 {
-    font-size: 13px;
-    letter-spacing: 1.5px;
+    font-size: 15px;
+    letter-spacing: 2px;
   }
 
   .form_input-container {
-    width: 90%;
-    height: 12%;
-    margin-top: 14px;
-    min-height: 38px;
-    padding: 0 16px;
-    gap: 10px;
+    width: 92%;
+    height: 50px;
+    padding: 0 18px 0 22px;
   }
 
   .input-container_input {
-    font-size: 14px;
-    min-height: 38px;
-    padding: 6px 0;
+    font-size: 16px;
   }
 
   .name-icon,
@@ -195,53 +561,131 @@ $primaryColor: green;
   }
 
   .form_button {
-    width: 100%;
-    height: 12%;
-    font-size: 16px;
-    margin-top: 16px;
-    letter-spacing: 1.5px;
-    padding: 0;
-  }
-
-  .status {
-    font-size: 15px;
-    margin-top: 6px;
-    min-height: 22px;
+    height: 48px;
+    font-size: 17px;
+    letter-spacing: 2px;
   }
 }
 
-@media screen and (max-height: 500px) and (orientation: landscape) {
+/* Мобильные */
+@media screen and (max-width: 768px) {
   .sign-up {
-    padding: 10px 20px;
+    padding: 30px 15px;
     min-height: 100vh;
   }
 
   .sign-up_form {
-    width: 70%;
-    max-width: 500px;
-    padding: 14px 20px;
-    min-height: auto;
+    width: 90%;
+    max-width: 450px;
+    padding: 30px 20px 25px;
+    min-height: 420px;
+    border-radius: 20px;
+
+    &::before {
+      border-radius: 22px;
+    }
   }
 
   .sign-up_form h2 {
-    font-size: 24px;
+    font-size: 34px;
+    letter-spacing: 4px;
+  }
+
+  .sign-up_form h3 {
+    font-size: 14px;
+    letter-spacing: 1.5px;
+
+    &::after {
+      width: 30px;
+    }
+  }
+
+  .form_input-container {
+    width: 95%;
+    height: 46px;
+    margin-top: 16px;
+    padding: 0 16px 0 20px;
+    gap: 12px;
+    border-radius: 50px;
+  }
+
+  .input-container_input {
+    font-size: 15px;
+  }
+
+  .name-icon,
+  .phone-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .form_button {
+    width: 100%;
+    height: 46px;
+    font-size: 16px;
     letter-spacing: 2px;
+    margin-top: 20px;
+    border-radius: 50px;
+
+    &:hover {
+      transform: translateY(-2px) scale(1.02);
+    }
+  }
+
+  .status {
+    font-size: 14px;
+    margin-top: 10px;
+    padding: 3px 12px;
+  }
+
+  .sign-up_form .form_decor {
+    &.decor-1 {
+      width: 120px;
+      height: 120px;
+      top: -40px;
+      right: -40px;
+    }
+
+    &.decor-2 {
+      width: 100px;
+      height: 100px;
+      bottom: -30px;
+      left: -30px;
+    }
+  }
+}
+
+/* Маленькие телефоны */
+@media screen and (max-width: 480px) {
+  .sign-up {
+    padding: 20px 12px;
+  }
+
+  .sign-up_form {
+    padding: 24px 16px 20px;
+    min-height: 380px;
+    border-radius: 18px;
+  }
+
+  .sign-up_form h2 {
+    font-size: 28px;
+    letter-spacing: 3px;
   }
 
   .sign-up_form h3 {
     font-size: 12px;
+    letter-spacing: 1px;
   }
 
   .form_input-container {
-    margin-top: 8px;
-    min-height: 32px;
-    padding: 0 14px;
+    height: 42px;
+    padding: 0 14px 0 16px;
+    gap: 10px;
+    border-width: 1.5px;
   }
 
   .input-container_input {
-    font-size: 13px;
-    min-height: 32px;
-    padding: 4px 0;
+    font-size: 14px;
   }
 
   .name-icon,
@@ -251,14 +695,157 @@ $primaryColor: green;
   }
 
   .form_button {
-    min-height: 34px;
+    height: 42px;
     font-size: 14px;
-    margin-top: 10px;
+    letter-spacing: 1.5px;
+    margin-top: 16px;
   }
 
   .status {
     font-size: 13px;
-    margin-top: 4px;
+    margin-top: 8px;
+    min-height: 20px;
+    padding: 2px 10px;
+  }
+}
+
+/* Ориентация ландшафт */
+@media screen and (max-height: 600px) and (orientation: landscape) {
+  .sign-up {
+    padding: 15px 20px;
+    align-items: center;
+  }
+
+  .sign-up_form {
+    width: 60%;
+    max-width: 480px;
+    padding: 20px 25px;
+    min-height: auto;
+  }
+
+  .sign-up_form h2 {
+    font-size: 28px;
+    letter-spacing: 3px;
+  }
+
+  .sign-up_form h3 {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  .form_input-container {
+    height: 38px;
+    margin-top: 12px;
+    padding: 0 14px 0 18px;
+    gap: 10px;
+  }
+
+  .input-container_input {
+    font-size: 14px;
+  }
+
+  .name-icon,
+  .phone-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .form_button {
+    height: 38px;
+    font-size: 14px;
+    margin-top: 14px;
+    letter-spacing: 1.5px;
+  }
+
+  .status {
+    font-size: 13px;
+    margin-top: 6px;
     min-height: 18px;
+  }
+}
+
+/* Высокие экраны */
+@media screen and (min-height: 900px) {
+  .sign-up_form {
+    min-height: 600px;
+    padding: 50px 40px 40px;
+  }
+
+  .sign-up_form h2 {
+    font-size: 56px;
+  }
+
+  .form_input-container {
+    height: 60px;
+  }
+
+  .form_button {
+    height: 58px;
+    font-size: 20px;
+  }
+}
+
+// ============================================
+// ДОПОЛНИТЕЛЬНЫЕ ЭФФЕКТЫ
+// ============================================
+
+// Скелетон загрузки
+@keyframes shimmerLoading {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+// Валидация полей
+.form_input-container {
+  &.valid {
+    border-color: rgba(74, 222, 128, 0.4);
+    @include neon-glow(rgba(74, 222, 128, 0.15), 0.1);
+
+    .input-container_input {
+      color: #4ade80;
+    }
+  }
+
+  &.invalid {
+    border-color: rgba(248, 113, 113, 0.4);
+    @include neon-glow(rgba(248, 113, 113, 0.15), 0.1);
+    animation: shake 0.5s ease;
+
+    .input-container_input {
+      color: #f87171;
+    }
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-8px);
+  }
+  75% {
+    transform: translateX(8px);
+  }
+}
+
+// ============================================
+// ДОСТУПНОСТЬ
+// ============================================
+
+.sign-up_form {
+  .form_input-container:focus-within {
+    outline: 2px solid rgba(126, 240, 126, 0.2);
+    outline-offset: 2px;
+  }
+
+  .form_button:focus-visible {
+    outline: 3px solid $primaryColor;
+    outline-offset: 3px;
   }
 }

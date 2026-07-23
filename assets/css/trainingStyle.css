@@ -87,14 +87,14 @@ body {
   position: absolute;
   bottom: -10px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-25%);
   width: 60%;
   height: 3px;
   background: linear-gradient(90deg, transparent, #7ef07e, transparent);
-  animation: shimmer 3s ease-in-out infinite;
+  animation: shimmerTraining 3s ease-in-out infinite;
 }
 
-@keyframes shimmer {
+@keyframes shimmerTraining {
   0%, 100% {
     transform: translateX(-50%) scaleX(0.3);
     opacity: 0.3;
@@ -344,6 +344,11 @@ body {
   box-shadow: 0 0 20px rgba(126, 240, 126, 0.08), 0 0 40px rgba(126, 240, 126, 0.048), 0 0 80px rgba(126, 240, 126, 0.024), inset 0 0 20px rgba(126, 240, 126, 0.008);
   position: relative;
   overflow: hidden;
+}
+.process-timeline_stage-card:hover {
+  transform: scale(1.02);
+  border: 1px solid #7ef07e;
+  cursor: pointer;
 }
 
 @keyframes borderGlow {

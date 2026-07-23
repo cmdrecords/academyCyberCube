@@ -141,15 +141,15 @@ body {
     position: absolute;
     bottom: -10px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-25%);
     width: 60%;
     height: 3px;
     background: linear-gradient(90deg, transparent, $primaryColor, transparent);
-    animation: shimmer 3s ease-in-out infinite;
+    animation: shimmerTraining 3s ease-in-out infinite;
   }
 }
 
-@keyframes shimmer {
+@keyframes shimmerTraining {
   0%,
   100% {
     transform: translateX(-50%) scaleX(0.3);
@@ -435,6 +435,12 @@ body {
   @include neon-glow($primaryColor, 0.08);
   position: relative;
   overflow: hidden;
+
+  &:hover {
+    transform: scale(1.02);
+    border: 1px solid #7ef07e;
+    cursor: pointer;
+  }
 }
 
 @keyframes borderGlow {

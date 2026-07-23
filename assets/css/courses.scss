@@ -208,6 +208,11 @@ body {
   overflow: hidden;
   cursor: pointer;
   min-height: 320px;
+
+  &:hover {
+    transform: scale(1.02);
+    border: 1px solid #7ef07e;
+  }
 }
 
 @keyframes borderGlow {
