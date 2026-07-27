@@ -357,63 +357,12 @@ body {
   transform: scale(0.95);
 }
 
-.contacts_map {
-  width: 45%;
-  max-width: 650px;
-  height: 500px;
-  border-radius: 24px;
-  background: #000;
-  position: relative;
-  z-index: 1;
-  animation: fadeInRight 1s ease-out 0.4s both;
-  overflow: hidden;
-}
-.contacts_map::before {
-  content: "";
-  position: absolute;
-  top: -3px;
-  left: -3px;
-  right: -3px;
-  bottom: -3px;
-  background: linear-gradient(135deg, rgba(126, 240, 126, 0.3), transparent 40%, transparent 60%, rgba(126, 240, 126, 0.3));
-  border-radius: 26px;
-  z-index: -1;
-  animation: rotateBorder 6s linear infinite;
-}
-.contacts_map::after {
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: #0a0f0a;
-  border-radius: 26px;
-  z-index: -1;
-}
-.contacts_map .map_glow {
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(ellipse at center, rgba(126, 240, 126, 0.03), transparent 70%);
-  pointer-events: none;
-  z-index: 1;
-  animation: pulseGlow 4s ease-in-out infinite;
-}
-.contacts_map iframe {
-  width: 100%;
+#map {
+  width: 575px;
   height: 100%;
-  border: none;
-  border-radius: 24px;
-  position: relative;
-  z-index: 2;
-  filter: brightness(0.85) contrast(1.05);
-  transition: all 0.6s ease;
-}
-.contacts_map:hover iframe {
-  filter: brightness(0.95) contrast(1.1);
+  min-height: 575px;
+  border-radius: 15px;
+  border: 2px solid rgb(126, 240, 126);
 }
 
 @keyframes rotateBorder {

@@ -53,21 +53,55 @@ for (let i = 0; i < durationsBtns.length; i++) {
   });
 }
 
-var map = L.map("map", {
-  attributionControl: false,
-}).setView([45.1121, 38.9616], 16);
+const lat = 45.0489;
+const lng = 38.9871;
+const coords = [lat, lng];
+
+const map = L.map("map", { attributionControl: false }).setView(coords, 20);
 
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-  maxZoom: 19,
+  attribution: "© OpenStreetMap contributors",
 }).addTo(map);
 
-L.marker([45.1121, 38.9616])
+const customIcon = L.divIcon({
+  className: "pulsating-marker",
+  html: `<div style="
+                background: #1a5fb4;
+                width: 24px;
+                height: 24px;
+                border-radius: 50% 50% 50% 0;
+                transform: rotate(-45deg);
+                border: 3px solid white;
+                box-shadow: 0 4px 15px rgba(26, 95, 180, 0.5);
+            "></div>`,
+  iconSize: [24, 24],
+  iconAnchor: [12, 24],
+  popupAnchor: [0, -30],
+});
+
+L.marker(coords, { icon: customIcon })
   .addTo(map)
-  .bindPopup("ул. им. Мурата Ахеджака, 10А<br>Краснодар")
+  .bindPopup("📍 <b>улица им. Мурата Ахеджака, 10А</b><br />Краснодар, Россия")
   .openPopup();
-const formInputs = document.querySelectorAll(".input-container_input");
-const nameIcon = document.querySelector(".name-icon");
-const phoneIcon = document.querySelector(".phone-icon");
+
+L.circle(coords, {
+  radius: 25,
+  color: "#1a5fb4",
+  weight: 2,
+  opacity: 0.3,
+  fillColor: "#1a5fb4",
+  fillOpacity: 0.1,
+}).addTo(map);
+
+setTimeout(() => {
+  map.invalidateSize();
+}, 300);
+
+window.addEventListener("resize", () => {
+  map.invalidateSize();
+});
+
+console.log("✅ Карта загружена! Маркер на месте.");
 
 function changeImage(img, newSrc) {
   img.style.opacity = "0";
