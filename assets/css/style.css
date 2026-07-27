@@ -230,6 +230,16 @@ nav {
   gap: 10px;
 }
 
+/*Добавил вложенный*/
+.main-inner_title-subtitle-buttons-wrapper {
+  height: 10dvh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/*Закончил вложенный */
 .main-inner_title-subtitle > h2 {
   color: white;
   font-size: 75px;
@@ -250,6 +260,7 @@ nav {
 
 .title-subtitle_button {
   background: linear-gradient(90deg, #00cc55, #00ff66);
+  text-decoration: none;
   padding: 22.5px 35px 22.5px 35px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   outline: none;
@@ -264,6 +275,14 @@ nav {
 .title-subtitle_button:hover {
   cursor: pointer;
   transform: translateY(-5px);
+}
+
+.border-thin {
+  background: transparent;
+  border: 1px solid white;
+  color: #7cff9a;
+  border: 1px solid #7cff9a;
+  text-shadow: 0 0 10px rgba(0, 255, 102, 0.75);
 }
 
 .main-inner_cube {
