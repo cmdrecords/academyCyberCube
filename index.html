@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
     <title>Академия программирования КиберКуб</title>
     <meta
       name="description"
@@ -15,7 +15,7 @@
     <meta name="author" content="Галкин Роман Павлович" />
     <link rel="icon" href="assets/images/cube48.png" type="image/png" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/courses.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/trainingStyle.css" />
@@ -600,7 +600,9 @@
             <a href="" class="info-block_btn-to-max">Перейти в MAX</a>
           </div>
         </div>
-        <div id="map" class="contacts_map"></div>
+        <div class="map-wrapper">
+          <div id="map"></div>
+        </div>
       </div>
     </section>
 
