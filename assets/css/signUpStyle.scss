@@ -433,6 +433,7 @@ body {
   background: rgba(126, 240, 126, 0.03);
   border: 1px solid rgba(126, 240, 126, 0.05);
   transition: all 0.4s ease;
+  display: none;
 
   // Анимация появления
   &.show {

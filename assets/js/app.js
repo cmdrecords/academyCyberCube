@@ -105,6 +105,7 @@ form.addEventListener("submit", async (e) => {
   const phone = document.getElementById("phone").value.trim();
 
   if (!name || !phone) {
+    statusDiv.style.display = "block";
     statusDiv.textContent = "Заполните все поля!";
     statusDiv.style.color = "#c1121f";
     return;

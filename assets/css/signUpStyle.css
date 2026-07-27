@@ -328,6 +328,7 @@ body {
   background: rgba(126, 240, 126, 0.03);
   border: 1px solid rgba(126, 240, 126, 0.05);
   transition: all 0.4s ease;
+  display: none;
 }
 .status.show {
   animation: statusPop 0.5s cubic-bezier(0.4, 0, 0.2, 1);
