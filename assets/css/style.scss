@@ -45,8 +45,7 @@ nav {
 
 .header_title-subtitle > h1 {
   color: #b8ffb8;
-  text-shadow:
-    0 0 18px rgba(0, 255, 102, 0.22),
+  text-shadow: 0 0 18px rgba(0, 255, 102, 0.22),
     0 0 42px rgba(0, 255, 102, 0.12);
   font-weight: 800;
   font-size: 35px;
@@ -78,8 +77,7 @@ nav {
   &:hover {
     cursor: pointer;
     color: #b8ffb8;
-    text-shadow:
-      0 0 18px rgba(0, 255, 102, 0.22),
+    text-shadow: 0 0 18px rgba(0, 255, 102, 0.22),
       0 0 42px rgba(0, 255, 102, 0.12);
   }
 }
@@ -98,10 +96,8 @@ nav {
   border-radius: 18px;
   background: linear-gradient(135deg, #061306 0%, #0a2a10 100%);
   border: 1px solid rgba(0, 255, 102, 0.5);
-  box-shadow:
-    inset 0 0 18px rgba(0, 255, 102, 0.08),
-    0 0 18px rgba(0, 255, 102, 0.22),
-    0 0 42px rgba(0, 255, 102, 0.12);
+  box-shadow: inset 0 0 18px rgba(0, 255, 102, 0.08),
+    0 0 18px rgba(0, 255, 102, 0.22), 0 0 42px rgba(0, 255, 102, 0.12);
   position: relative;
   overflow: hidden;
 }
@@ -220,22 +216,31 @@ nav {
 
 #hero {
   background: 
-    /* Первый слой — большой светящийся круг сверху */
-    radial-gradient(
+    /* Первый слой — большой светящийся круг сверху */ radial-gradient(
       circle at 20% 10%,
       rgba(0, 255, 102, 0.25),
       transparent 50%
     ),
     /* Второй слой — второй круг справа для объема */
-    radial-gradient(circle at 80% 30%, rgba(0, 200, 80, 0.12), transparent 40%),
+      radial-gradient(
+        circle at 80% 30%,
+        rgba(0, 200, 80, 0.12),
+        transparent 40%
+      ),
     /* Третий слой — мягкое свечение снизу */
-    radial-gradient(
+      radial-gradient(
         circle at 50% 100%,
         rgba(0, 255, 102, 0.08),
         transparent 35%
       ),
     /* Базовый градиент — без резких переходов, чтобы не было черных дыр */
-    linear-gradient(165deg, #0a1a0a 0%, #030803 30%, #010301 70%, #050f05 100%);
+      linear-gradient(
+        165deg,
+        #0a1a0a 0%,
+        #030803 30%,
+        #010301 70%,
+        #050f05 100%
+      );
 
   background-blend-mode: normal, normal, normal, normal;
   background-attachment: fixed; /* Фон не скроллится, всегда заполнен */
@@ -271,6 +276,16 @@ nav {
   gap: 10px;
 }
 
+/*Добавил вложенный*/
+.main-inner_title-subtitle-buttons-wrapper {
+  height: 10dvh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+/*Закончил вложенный */
+
 .main-inner_title-subtitle > h2 {
   color: white;
   font-size: 75px;
@@ -291,6 +306,7 @@ nav {
 
 .title-subtitle_button {
   background: linear-gradient(90deg, #00cc55, #00ff66);
+  text-decoration: none;
   padding: 22.5px 35px 22.5px 35px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   outline: none;
@@ -298,15 +314,21 @@ nav {
   color: #031203;
   font-size: 18px;
   font-weight: bold;
-  box-shadow:
-    0 0 18px rgba(0, 255, 102, 0.22),
-    0 0 42px rgba(0, 255, 102, 0.12);
+  box-shadow: 0 0 18px rgba(0, 255, 102, 0.22), 0 0 42px rgba(0, 255, 102, 0.12);
   transition: 0.4s;
   margin-top: 5px;
   &:hover {
     cursor: pointer;
     transform: translateY(-5px);
   }
+}
+
+.border-thin {
+  background: transparent;
+  border: 1px solid white;
+  color: #7cff9a;
+  border: 1px solid #7cff9a;
+  text-shadow: 0 0 10px rgba(0, 255, 102, 0.75);
 }
 
 .main-inner_cube {
@@ -345,8 +367,7 @@ nav {
     rgba(5, 20, 5, 0.95) 0%,
     rgba(10, 45, 10, 0.92) 100%
   );
-  box-shadow:
-    inset 0 0 22px rgba(0, 255, 102, 0.08),
+  box-shadow: inset 0 0 22px rgba(0, 255, 102, 0.08),
     0 0 18px rgba(0, 255, 102, 0.08);
   backface-visibility: hidden;
   font-weight: 800;
