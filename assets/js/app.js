@@ -1,3 +1,73 @@
+document.addEventListener("DOMContentLoaded", function () {
+  // ----- АНИМАЦИЯ СТАТИСТИКИ -----
+  function animateNumbers() {
+    const stats = document.querySelectorAll(".stat-number");
+    stats.forEach((stat) => {
+      const target = parseInt(stat.dataset.count);
+      let current = 0;
+      const increment = target / 60;
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          current = target;
+          clearInterval(timer);
+        }
+        stat.textContent =
+          Math.floor(current) + (stat.dataset.count == 98 ? "%" : "");
+      }, 20);
+    });
+  }
+  animateNumbers();
+
+  // ----- АККОРДЕОН -----
+  const faqItems = document.querySelectorAll(".faq-item");
+
+  faqItems.forEach((item) => {
+    const question = item.querySelector(".faq-question");
+
+    question.addEventListener("click", function () {
+      const isActive = item.classList.contains("active");
+
+      // Закрываем все
+      faqItems.forEach((other) => {
+        other.classList.remove("active");
+      });
+
+      // Открываем текущий, если был закрыт
+      if (!isActive) {
+        item.classList.add("active");
+      }
+    });
+  });
+
+  // Открываем первый вопрос по умолчанию
+  if (faqItems.length > 0) {
+    faqItems[0].classList.add("active");
+  }
+
+  // ----- КАТЕГОРИИ -----
+  const categoryBtns = document.querySelectorAll(".category-btn");
+  const allItems = document.querySelectorAll(".faq-item");
+
+  categoryBtns.forEach((btn) => {
+    btn.addEventListener("click", function () {
+      // Убираем активные классы
+      categoryBtns.forEach((b) => b.classList.remove("active"));
+      this.classList.add("active");
+
+      const category = this.dataset.category;
+
+      allItems.forEach((item) => {
+        if (category === "all" || item.dataset.category === category) {
+          item.style.display = "";
+        } else {
+          item.style.display = "none";
+        }
+      });
+    });
+  });
+});
+
 const lineIcons = [
   "assets/images/icons8-c-sharp-logo-100.png",
   "assets/images/icons8-c++-100.png",

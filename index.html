@@ -22,6 +22,7 @@
     <link rel="stylesheet" type="text/css" href="assets/css/contactsStyle.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/signUpStyle.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/footerStyle.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/faqStyle.css" />
   </head>
   <body>
     <header>
@@ -566,6 +567,384 @@
           Общая длительность обучения — 3 года
         </div>
       </div>
+    </section>
+
+    <section id="faq">
+      <div class="faq-page">
+        
+        <!-- ===== ЗАГОЛОВОК ===== -->
+        <div class="faq-header">
+            <span class="badge">Часто задаваемые вопросы</span>
+            <h1>
+                Всё, что вы хотели <br>
+                <span class="highlight">знать</span> об обучении
+            </h1>
+            <p>
+                Ответы на самые популярные вопросы от студентов 
+                <span class="accent">КиберКуб Академии</span>
+            </p>
+        </div>
+        
+        <!-- ===== СТАТИСТИКА ===== -->
+        <div class="faq-stats">
+            <div class="stat-item">
+                <span class="stat-number" data-count="150">0</span>
+                <span class="stat-label">Вопросов в базе</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-count="98">0</span>
+                <span class="stat-label">довольных студентов</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-count="24">0</span>
+                <span class="stat-label">часа ответа</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-count="12">0</span>
+                <span class="stat-label">Категорий</span>
+            </div>
+        </div>
+        
+        <!-- ===== КАТЕГОРИИ ===== -->
+        <div class="faq-categories" id="faqCategories">
+            <button class="category-btn active" data-category="all">
+                Все <span class="count">(8)</span>
+            </button>
+            <button class="category-btn" data-category="learning">
+                <img src="assets/images/study.png" width="20" height="20"></img> Обучение <span class="count">(3)</span>
+            </button>
+            <button class="category-btn" data-category="payment">
+                <img src="assets/images/payment.png" width="22" height="22"></img> Оплата <span class="count">(2)</span>
+            </button>
+            <button class="category-btn" data-category="tech">
+                <img src="assets/images/laptop.png" width="20" height="20"></img> Технологии <span class="count">(2)</span>
+            </button>
+            <button class="category-btn" data-category="career">
+                <img src="assets/images/rocket.png" width="20" height="20"></img> Карьера <span class="count">(1)</span>
+            </button>
+        </div>
+        
+        <!-- ===== КОНТЕЙНЕР ВОПРОСОВ ===== -->
+        <div class="faq-container" id="faqContainer">
+            
+            <!-- Вопрос 1 -->
+            <div class="faq-item" data-category="learning">
+                <div class="faq-question">
+                    <div class="faq-question-left">
+                        <img src="assets/images/study.png" width="30" height="30"></img>
+                        <span class="q-label">Обучение</span>
+                        <h3>С чего начать обучение в академии?</h3>
+                    </div>
+                    <div class="faq-toggle">
+                        <svg viewBox="0 0 24 24">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p>
+                            Начать обучение в <span class="highlight-text">КиберКуб Академии</span> очень просто:
+                        </p>
+                        <ul>
+                            <li>Пройдите <span class="highlight-text">бесплатное</span> тестирование для определения уровня</li>
+                            <li>Выберите подходящий <span class="highlight-text">курс</span> из нашей библиотеки</li>
+                            <li>Запишитесь на <span class="highlight-text">пробный урок</span> с ментором</li>
+                            <li>Получите доступ к <span class="highlight-text">личному кабинету</span> и материалам</li>
+                        </ul>
+                        <p>
+                            Все новые студенты получают <span class="highlight-text">скидку 15%</span> на первый месяц обучения!
+                        </p>
+                        <div class="faq-tags">
+                            <span class="faq-tag">#начало</span>
+                            <span class="faq-tag">#регистрация</span>
+                            <span class="faq-tag">#первый_шаг</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Вопрос 2 -->
+            <div class="faq-item" data-category="payment">
+                <div class="faq-question">
+                    <div class="faq-question-left">
+                        <img src="assets/images/payment.png" width="32" height="32"></img>
+                        <span class="q-label">Оплата</span>
+                        <h3>Какие способы оплаты доступны?</h3>
+                    </div>
+                    <div class="faq-toggle">
+                        <svg viewBox="0 0 24 24">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p>
+                            Мы принимаем оплату следующими способами:
+                        </p>
+                        <ul>
+                            <li>💳 <span class="highlight-text">Банковские карты</span> (Visa, Mastercard, МИР)</li>
+                            <li>📱 <span class="highlight-text">Системы быстрых платежей</span> (СБП)</li>
+                            <li>🏦 <span class="highlight-text">Безналичный перевод</span> по счету</li>
+                            <li>📱 <span class="highlight-text">Криптовалюта</span> (BTC, ETH, USDT)</li>
+                        </ul>
+                        <p>
+                            Доступна <span class="highlight-text">рассрочка</span> на 3, 6 и 12 месяцев без переплаты!
+                        </p>
+                        <div class="faq-tags">
+                            <span class="faq-tag">#оплата</span>
+                            <span class="faq-tag">#рассрочка</span>
+                            <span class="faq-tag">#карты</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Вопрос 3 -->
+            <div class="faq-item" data-category="tech">
+                <div class="faq-question">
+                    <div class="faq-question-left">
+                        <img src="assets/images/laptop.png" width="30" height="30"></img>
+                        <span class="q-label">Технологии</span>
+                        <h3>На каких языках программирования вы обучаете?</h3>
+                    </div>
+                    <div class="faq-toggle">
+                        <svg viewBox="0 0 24 24">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p>
+                            В <span class="highlight-text">КиберКуб Академии</span> мы охватываем широкий спектр технологий:
+                        </p>
+                        <ul>
+                            <li>🐍 <span class="highlight-text">Python</span> — Data Science, Backend, AI</li>
+                            <li>⚛️ <span class="highlight-text">JavaScript/TypeScript</span> — Frontend, Fullstack</li>
+                            <li>☕ <span class="highlight-text">Java</span> — Enterprise, Android</li>
+                            <li>🦀 <span class="highlight-text">Rust</span> — Systems Programming</li>
+                            <li>📱 <span class="highlight-text">Swift/Kotlin</span> — Mobile Development</li>
+                        </ul>
+                        <p>
+                            Также мы преподаем <span class="highlight-text">Go, C++, PHP</span> и современные фреймворки.
+                        </p>
+                        <div class="faq-tags">
+                            <span class="faq-tag">#языки</span>
+                            <span class="faq-tag">#программирование</span>
+                            <span class="faq-tag">#стек</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Вопрос 4 -->
+            <div class="faq-item" data-category="learning">
+                <div class="faq-question">
+                    <div class="faq-question-left">
+                         <img src="assets/images/study.png" width="30" height="30"></img>
+                        <span class="q-label">Обучение</span>
+                        <h3>Сколько длится обучение и в каком формате?</h3>
+                    </div>
+                    <div class="faq-toggle">
+                        <svg viewBox="0 0 24 24">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p>
+                            Длительность обучения зависит от выбранного курса:
+                        </p>
+                        <ul>
+                            <li>📘 <span class="highlight-text">Базовые курсы</span> — 3-4 месяца</li>
+                            <li>📗 <span class="highlight-text">Профессиональные курсы</span> — 6-8 месяцев</li>
+                            <li>📕 <span class="highlight-text">Интенсивные программы</span> — 2-3 месяца</li>
+                        </ul>
+                        <p>
+                            Формат обучения — <span class="highlight-text">гибридный</span>:
+                            <span class="code-tag">онлайн</span> + 
+                            <span class="code-tag">офлайн</span> встречи,
+                            <span class="code-tag">записи</span> лекций и 
+                            <span class="code-tag">живые</span> вебинары.
+                        </p>
+                        <div class="faq-tags">
+                            <span class="faq-tag">#длительность</span>
+                            <span class="faq-tag">#формат</span>
+                            <span class="faq-tag">#интенсив</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Вопрос 5 -->
+            <div class="faq-item" data-category="career">
+                <div class="faq-question">
+                    <div class="faq-question-left">
+                        <img src="assets/images/rocket.png" width="30" height="30"></img>
+                        <span class="q-label">Карьера</span>
+                        <h3>Помогаете ли вы с трудоустройством?</h3>
+                    </div>
+                    <div class="faq-toggle">
+                        <svg viewBox="0 0 24 24">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p>
+                            Да, у нас есть полноценная <span class="highlight-text">карьерная поддержка</span>:
+                        </p>
+                        <ul>
+                            <li>📝 Помощь в составлении <span class="highlight-text">резюме</span> и портфолио</li>
+                            <li>🎯 Подготовка к <span class="highlight-text">собеседованиям</span></li>
+                            <li>🤝 <span class="highlight-text">Партнерства</span> с IT-компаниями</li>
+                            <li>📊 <span class="highlight-text">Стажировки</span> и проектная работа</li>
+                        </ul>
+                        <p>
+                            <span class="highlight-text">98%</span> наших выпускников находят работу 
+                            в течение 3 месяцев после окончания курса!
+                        </p>
+                        <div class="faq-tags">
+                            <span class="faq-tag">#карьера</span>
+                            <span class="faq-tag">#трудоустройство</span>
+                            <span class="faq-tag">#стажировка</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Вопрос 6 -->
+            <div class="faq-item" data-category="payment">
+                <div class="faq-question">
+                    <div class="faq-question-left">
+                        <img src="assets/images/payment.png" width="32" height="32"></img>
+                        <span class="q-label">Оплата</span>
+                        <h3>Есть ли рассрочка или скидки для студентов?</h3>
+                    </div>
+                    <div class="faq-toggle">
+                        <svg viewBox="0 0 24 24">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p>
+                            Мы предлагаем гибкую систему <span class="highlight-text">скидок и рассрочек</span>:
+                        </p>
+                        <ul>
+                            <li>🎓 <span class="highlight-text">Студенческий</span> билет — скидка 10%</li>
+                            <li>👥 <span class="highlight-text">Групповое</span> обучение (от 3 человек) — скидка 15%</li>
+                            <li>📅 <span class="highlight-text">Раннее</span> бронирование — скидка 20%</li>
+                            <li>💳 <span class="highlight-text">Рассрочка</span> на 3-12 месяцев без %</li>
+                        </ul>
+                        <p>
+                            Также действуют <span class="highlight-text">акции</span> в начале каждого семестра — 
+                            подписывайтесь на наши соцсети!
+                        </p>
+                        <div class="faq-tags">
+                            <span class="faq-tag">#скидки</span>
+                            <span class="faq-tag">#рассрочка</span>
+                            <span class="faq-tag">#акции</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Вопрос 7 -->
+            <div class="faq-item" data-category="tech">
+                <div class="faq-question">
+                    <div class="faq-question-left">
+                        <img src="assets/images/laptop.png" width="30" height="30"></img>
+                        <span class="q-label">Технологии</span>
+                        <h3>Какое оборудование нужно для обучения?</h3>
+                    </div>
+                    <div class="faq-toggle">
+                        <svg viewBox="0 0 24 24">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p>
+                            Минимальные <span class="highlight-text">технические требования</span>:
+                        </p>
+                        <ul>
+                            <li>💻 <span class="highlight-text">Ноутбук/ПК</span> с 8GB RAM и 4-ядерным процессором</li>
+                            <li>🌐 <span class="highlight-text">Интернет</span> от 10 Мбит/с</li>
+                            <li>🎧 <span class="highlight-text">Наушники</span> с микрофоном для вебинаров</li>
+                            <li>📱 <span class="highlight-text">Смартфон</span> для мобильного доступа</li>
+                        </ul>
+                        <p>
+                            Для интенсивных курсов по <span class="highlight-text">AI/ML</span> 
+                            рекомендуется видеокарта от <span class="code-tag">NVIDIA</span>.
+                        </p>
+                        <div class="faq-tags">
+                            <span class="faq-tag">#оборудование</span>
+                            <span class="faq-tag">#техника</span>
+                            <span class="faq-tag">#системные_требования</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Вопрос 8 -->
+            <div class="faq-item" data-category="learning">
+                <div class="faq-question">
+                    <div class="faq-question-left">
+                         <img src="assets/images/study.png" width="30" height="30"></img>
+                        <span class="q-label">Обучение</span>
+                        <h3>Выдаете ли вы сертификаты после обучения?</h3>
+                    </div>
+                    <div class="faq-toggle">
+                        <svg viewBox="0 0 24 24">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p>
+                            Да, после успешного завершения курса вы получаете:
+                        </p>
+                        <ul>
+                            <li>🎓 <span class="highlight-text">Сертификат</span> о прохождении курса</li>
+                            <li>📄 <span class="highlight-text">Диплом</span> о профессиональной переподготовке</li>
+                            <li>💼 <span class="highlight-text">Портфолио</span> с реальными проектами</li>
+                            <li>⭐ <span class="highlight-text">Рекомендательное письмо</span> от ментора</li>
+                        </ul>
+                        <p>
+                            Все документы имеют <span class="highlight-text">государственный образец</span> 
+                            и котируются в IT-компаниях.
+                        </p>
+                        <div class="faq-tags">
+                            <span class="faq-tag">#сертификат</span>
+                            <span class="faq-tag">#диплом</span>
+                            <span class="faq-tag">#документы</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ===== КНОПКА "ЗАДАТЬ ВОПРОС" ===== -->
+        <div class="faq-ask">
+            <h3>Не нашли ответ на свой вопрос?</h3>
+            <p>Наша команда поддержки ответит вам в течение 24 часов</p>
+            <button class="ask-btn">
+                Задать вопрос
+                <svg viewBox="0 0 24 24">
+                    <line x1="12" y1="5" x2="12" y2="19"/>
+                    <line x1="5" y1="12" x2="19" y2="12"/>
+                </svg>
+            </button>
+        </div>
+    </div>
     </section>
 
     <section id="contacts">
