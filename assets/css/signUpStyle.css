@@ -225,23 +225,6 @@ body {
   -webkit-text-fill-color: white !important;
 }
 
-.name-icon,
-.phone-icon {
-  width: 24px;
-  height: 24px;
-  flex-shrink: 0;
-  stroke: rgba(126, 240, 126, 0.3);
-  fill: none;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.form_input-container:hover .name-icon,
-.form_input-container:hover .phone-icon {
-  stroke: rgba(126, 240, 126, 0.5);
-}
-
 .form_button {
   width: 95%;
   height: 52px;

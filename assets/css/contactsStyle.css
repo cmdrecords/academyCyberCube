@@ -345,8 +345,6 @@ body {
   transition: left 0.6s ease;
 }
 .info-block_btn-to-max:hover {
-  background: #7ef07e;
-  border-color: #7ef07e;
   transform: scale(1.05);
   box-shadow: 0 0 20px rgba(126, 240, 126, 0.2), 0 0 40px rgba(126, 240, 126, 0.1), 0 0 80px rgba(126, 240, 126, 0.04), inset 0 0 20px rgba(126, 240, 126, 0.01);
 }

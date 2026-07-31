@@ -123,9 +123,7 @@ for (let i = 0; i < durationsBtns.length; i++) {
   });
 }
 
-const lat = 45.0489;
-const lng = 38.9871;
-const coords = [lat, lng];
+const coords = [45.112056, 38.961551];
 
 const map = L.map("map", { attributionControl: false }).setView(coords, 20);
 
@@ -171,8 +169,6 @@ window.addEventListener("resize", () => {
   map.invalidateSize();
 });
 
-console.log("✅ Карта загружена! Маркер на месте.");
-
 function changeImage(img, newSrc) {
   img.style.opacity = "0";
 
@@ -181,6 +177,10 @@ function changeImage(img, newSrc) {
     img.style.opacity = "1";
   }, 200);
 }
+
+const formInputs = document.querySelectorAll(".form_input-container");
+const nameIcon = document.querySelector(".name-icon");
+const phoneIcon = document.querySelector(".phone-icon");
 
 formInputs[0].addEventListener("focus", () => {
   changeImage(nameIcon, "assets/images/name-active.png");
@@ -207,6 +207,8 @@ form.addEventListener("submit", async (e) => {
 
   const name = document.getElementById("fullName").value.trim();
   const phone = document.getElementById("phone").value.trim();
+
+  console.log(name, phone);
 
   if (!name || !phone) {
     statusDiv.style.display = "block";

@@ -486,8 +486,6 @@ body {
   }
 
   &:hover {
-    background: $primaryColor;
-    border-color: $primaryColor;
     transform: scale(1.05);
     @include neon-glow($primaryColor, 0.2);
 
