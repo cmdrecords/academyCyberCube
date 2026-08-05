@@ -286,12 +286,12 @@ body {
 .process-timeline_part:nth-of-type(2) {
   width: 50%;
   min-height: 400px;
-  background-image: url("../images/1-year-technologies.png");
-  background-size: contain;
+  background-image: url("../images/trainingImg.png");
+  background-size: 600px 900px;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
-  filter: brightness(90%) drop-shadow(0 0 40px rgba(126, 240, 126, 0.1));
+  filter: brightness(75%) drop-shadow(0 0 40px rgba(126, 240, 126, 0.1));
   animation: floatImage 8s ease-in-out infinite;
   border-radius: 20px;
 }
