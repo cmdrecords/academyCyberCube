@@ -194,9 +194,11 @@ body {
 /* ----- СТАТИСТИКА ----- */
 .faq-stats {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-content: center;
   gap: 20px;
-  max-width: 1000px;
+  max-width: 900px;
   margin: 0 auto 50px;
 }
 
