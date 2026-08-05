@@ -465,15 +465,28 @@ nav {
     display: none;
   }
   nav {
-    position: absolute;
     height: 20%;
+    width: 100%;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    left: 0;
-    top: 0;
   }
   .floating-computer {
     display: none;
+  }
+
+  .header_title-subtitle > h1 {
+    width: 100%;
+    text-align: center;
+    align-content: center;
+    font-size: 42px;
+  }
+
+  .header_title-subtitle > h2 {
+    width: 100%;
+    text-align: center;
+    align-content: center;
+    font-size: 22px;
   }
 
   .main-inner_title-subtitle {
