@@ -651,6 +651,7 @@ $footerBg: #050805;
 .footer_copyright {
   color: rgba(255, 255, 255, 0.3);
   font-size: 14px;
+  text-decoration: none;
 
   .heart {
     color: #ff6b6b;
@@ -665,6 +666,10 @@ $footerBg: #050805;
     &:hover {
       color: $primaryColor;
     }
+  }
+
+  a {
+    color: grey;
   }
 }
 

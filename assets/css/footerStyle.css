@@ -513,6 +513,7 @@
 .footer_copyright {
   color: rgba(255, 255, 255, 0.3);
   font-size: 14px;
+  text-decoration: none;
 }
 .footer_copyright .heart {
   color: #ff6b6b;
@@ -525,6 +526,9 @@
 }
 .footer_copyright .brand:hover {
   color: #7ef07e;
+}
+.footer_copyright a {
+  color: grey;
 }
 
 @keyframes heartbeat {
