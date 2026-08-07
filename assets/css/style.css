@@ -235,6 +235,7 @@ nav {
   height: 10dvh;
   width: 100%;
   display: flex;
+  justify-content: start;
   align-items: center;
   gap: 20px;
 }
@@ -414,6 +415,12 @@ nav {
 @media (max-width: 1240px) {
   .main-inner_cube {
     display: none;
+  }
+  .main-inner_title-subtitle {
+    width: 100%;
+  }
+  .main-inner_title-subtitle-buttons-wrapper {
+    justify-content: center;
   }
   nav {
     height: 20%;
