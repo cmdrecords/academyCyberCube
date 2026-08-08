@@ -123,7 +123,10 @@ for (let i = 0; i < durationsBtns.length; i++) {
   });
 }
 
-const coords = [45.112056, 38.961551];
+let x = 45.112056;
+let y = 38.961551;
+
+const coords = [x, y];
 
 const map = L.map("map", { attributionControl: false }).setView(coords, 20);
 
@@ -147,19 +150,37 @@ const customIcon = L.divIcon({
   popupAnchor: [0, -30],
 });
 
-L.marker(coords, { icon: customIcon })
+const marker = L.marker(coords, { icon: customIcon })
   .addTo(map)
-  .bindPopup("📍 <b>улица им. Мурата Ахеджака, 10А</b><br />Краснодар, Россия")
+  .bindPopup(`📍 <b>улица им. Мурата Ахеджака, 10А</b><br />Краснодар, Россия`)
   .openPopup();
 
-L.circle(coords, {
-  radius: 25,
-  color: "#1a5fb4",
-  weight: 2,
-  opacity: 0.3,
-  fillColor: "#1a5fb4",
-  fillOpacity: 0.1,
-}).addTo(map);
+const mapButtons = document.querySelectorAll(".map-button");
+for (let i = 0; i < mapButtons.length; i++) {
+  mapButtons[i].addEventListener("click", () => {
+    let newX, newY;
+    if (i == 0) {
+      newX = 45.112056;
+      newY = 38.961551;
+      marker
+        .bindPopup(
+          `📍 <b>улица им. Мурата Ахеджака, 10А</b><br />Краснодар, Россия`,
+        )
+        .openPopup();
+    } else {
+      newX = 45.018264;
+      newY = 38.960329;
+      marker
+        .bindPopup(
+          `📍 <b>улица им. Пушкина, д. Колотушкина</b><br />Краснодар, Россия`,
+        )
+        .openPopup();
+    }
+
+    map.setView([newX, newY], map.getZoom());
+    marker.setLatLng([newX, newY]);
+  });
+}
 
 setTimeout(() => {
   map.invalidateSize();
