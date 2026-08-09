@@ -191,12 +191,6 @@
   background: linear-gradient(90deg, transparent, rgba(126, 240, 126, 0.1), transparent);
   transition: left 0.6s ease;
 }
-.social_link svg {
-  width: 20px;
-  height: 20px;
-  fill: currentColor;
-  transition: all 0.4s ease;
-}
 .social_link:hover {
   transform: translateY(-4px) scale(1.1);
   border-color: #7ef07e;
@@ -206,9 +200,6 @@
 }
 .social_link:hover::before {
   left: 100%;
-}
-.social_link:hover svg {
-  transform: scale(1.1);
 }
 .social_link:active {
   transform: scale(0.95);

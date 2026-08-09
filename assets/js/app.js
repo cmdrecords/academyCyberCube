@@ -179,6 +179,11 @@ for (let i = 0; i < mapButtons.length; i++) {
 
     map.setView([newX, newY], map.getZoom());
     marker.setLatLng([newX, newY]);
+
+    for (let j = 0; j < mapButtons.length; j++) {
+      mapButtons[j].style.color = "white";
+    }
+    mapButtons[i].style.color = "#7ef07e";
   });
 }
 
@@ -190,31 +195,22 @@ window.addEventListener("resize", () => {
   map.invalidateSize();
 });
 
-function changeImage(img, newSrc) {
-  img.style.opacity = "0";
-
-  setTimeout(() => {
-    img.src = newSrc;
-    img.style.opacity = "1";
-  }, 200);
-}
-
-const formInputs = document.querySelectorAll(".form_input-container");
+const formInputs = document.querySelectorAll(".input-container_input");
 const nameIcon = document.querySelector(".name-icon");
 const phoneIcon = document.querySelector(".phone-icon");
 
 formInputs[0].addEventListener("focus", () => {
-  changeImage(nameIcon, "assets/images/name-active.png");
+  nameIcon.src = "assets/images/name-active.png";
 });
 formInputs[0].addEventListener("blur", () => {
-  changeImage(nameIcon, "assets/images/name-unactive.png");
+  nameIcon.src = "assets/images/name-unactive.png";
 });
 
 formInputs[1].addEventListener("focus", () => {
-  changeImage(phoneIcon, "assets/images/phone-active.png");
+  phoneIcon.src = "assets/images/phone-active.png";
 });
 formInputs[1].addEventListener("blur", () => {
-  changeImage(phoneIcon, "assets/images/phone-unactive.png");
+  phoneIcon.src = "assets/images/phone-unactive.png";
 });
 
 const BOT_TOKEN = "8770173167:AAFsufCD64vRNuvtePu4AhQbIhvr-7MoxEY";

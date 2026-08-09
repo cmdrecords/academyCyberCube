@@ -332,6 +332,16 @@ body {
   animation: pulseText 1.5s ease-in-out infinite;
 }
 
+.user-agreement {
+  text-align: center;
+  font-weight: 200;
+  font-size: 14px;
+  margin-top: 5px;
+}
+.user-agreement span {
+  color: #7ef07e;
+}
+
 @keyframes statusPop {
   0% {
     opacity: 0;

@@ -292,13 +292,6 @@ $footerBg: #050805;
     transition: left 0.6s ease;
   }
 
-  svg {
-    width: 20px;
-    height: 20px;
-    fill: currentColor;
-    transition: all 0.4s ease;
-  }
-
   &:hover {
     transform: translateY(-4px) scale(1.1);
     border-color: $primaryColor;
@@ -308,10 +301,6 @@ $footerBg: #050805;
 
     &::before {
       left: 100%;
-    }
-
-    svg {
-      transform: scale(1.1);
     }
   }
 
