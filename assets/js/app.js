@@ -41,9 +41,9 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Открываем первый вопрос по умолчанию
-  if (faqItems.length > 0) {
-    faqItems[0].classList.add("active");
-  }
+  // if (faqItems.length > 0) {
+  //   faqItems[0].classList.add("active");
+  // }
 
   // ----- КАТЕГОРИИ -----
   const categoryBtns = document.querySelectorAll(".category-btn");
