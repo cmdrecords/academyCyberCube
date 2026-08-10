@@ -213,7 +213,7 @@ formInputs[1].addEventListener("blur", () => {
   phoneIcon.src = "assets/images/phone-unactive.png";
 });
 
-const BOT_TOKEN = "8770173167:AAFsufCD64vRNuvtePu4AhQbIhvr-7MoxEY";
+const BOT_TOKEN = "8605758718:AAEFMYVXa39Sz9Vndj8Xu_-Mb_4rWXGuF7Y";
 const CHAT_ID = "833477605";
 
 const form = document.getElementById("tgForm");
