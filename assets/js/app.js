@@ -164,7 +164,7 @@ for (let i = 0; i < mapButtons.length; i++) {
       newY = 38.961551;
       marker
         .bindPopup(
-          `📍 <b>улица им. Мурата Ахеджака, 10А</b><br />Краснодар, Россия`
+          `📍 <b>улица им. Мурата Ахеджака, 10А</b><br />Краснодар, Россия`,
         )
         .openPopup();
     } else {
@@ -172,7 +172,7 @@ for (let i = 0; i < mapButtons.length; i++) {
       newY = 38.904894;
       marker
         .bindPopup(
-          `📍 <b>улица им. Беличенко, д. 92</b><br />Краснодар, Россия`
+          `📍 <b>улица им. Беличенко, д. 92</b><br />Краснодар, Россия`,
         )
         .openPopup();
     }
@@ -218,8 +218,9 @@ const CHAT_ID = "833477605";
 
 const form = document.getElementById("tgForm");
 const statusDiv = document.getElementById("statusMessage");
+const formBtn = document.querySelector(".form_button");
 
-form.addEventListener("submit", async (e) => {
+formBtn.addEventListener("click", async (e) => {
   e.preventDefault();
 
   const name = document.getElementById("fullName").value.trim();
