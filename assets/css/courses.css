@@ -275,6 +275,13 @@ body {
   background-clip: text;
   font-size: 32px;
   font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.footer_course-price h3 {
+  text-decoration: line-through;
+  text-decoration-color: #7ef0c8;
 }
 .footer_course-price span {
   font-size: 18px;

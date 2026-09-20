@@ -331,6 +331,14 @@ body {
   @include gradient-text;
   font-size: 32px;
   font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  h3 {
+    text-decoration: line-through;
+    text-decoration-color: #7ef0c8;
+  }
 
   span {
     font-size: 18px;

@@ -131,7 +131,10 @@
               </ul>
             </div>
             <div class="course-block_footer">
-              <div class="footer_course-price">6 500 <span>руб.</span></div>
+              <div class="footer_course-price">
+                <h3>6 500</h3>
+                <span>руб.</span>
+              </div>
               <a href="#sign-up" class="footer_button-sign-up">Записаться</a>
             </div>
           </div>
@@ -177,7 +180,10 @@
               </ul>
             </div>
             <div class="course-block_footer">
-              <div class="footer_course-price">6 500 <span>руб.</span></div>
+              <div class="footer_course-price">
+                <h3>6 500</h3>
+                <span>руб.</span>
+              </div>
               <a href="#sign-up" class="footer_button-sign-up">Записаться</a>
             </div>
           </div>
@@ -223,7 +229,10 @@
               </ul>
             </div>
             <div class="course-block_footer">
-              <div class="footer_course-price">6 500 <span>руб.</span></div>
+              <div class="footer_course-price">
+                <h3>6 500</h3>
+                <span>руб.</span>
+              </div>
               <a href="#sign-up" class="footer_button-sign-up">Записаться</a>
             </div>
           </div>
@@ -269,7 +278,10 @@
               </ul>
             </div>
             <div class="course-block_footer">
-              <div class="footer_course-price">6 500 <span>руб.</span></div>
+              <div class="footer_course-price">
+                <h3>6 500</h3>
+                <span>руб.</span>
+              </div>
               <a href="#sign-up" class="footer_button-sign-up">Записаться</a>
             </div>
           </div>
@@ -315,7 +327,10 @@
               </ul>
             </div>
             <div class="course-block_footer">
-              <div class="footer_course-price">6 500 <span>руб.</span></div>
+              <div class="footer_course-price">
+                <h3>6 500</h3>
+                <span>руб.</span>
+              </div>
               <a href="#sign-up" class="footer_button-sign-up">Записаться</a>
             </div>
           </div>
@@ -361,7 +376,10 @@
               </ul>
             </div>
             <div class="course-block_footer">
-              <div class="footer_course-price">6 500 <span>руб.</span></div>
+              <div class="footer_course-price">
+                <h3>6 500</h3>
+                <span>руб.</span>
+              </div>
               <a href="#sign-up" class="footer_button-sign-up">Записаться</a>
             </div>
           </div>
@@ -1086,22 +1104,26 @@
           <div class="form_input-container">
             <img src="/assets/images/name-unactive.png" width="30px" height="30px" class="name-icon"></img>
             <input
+              name="name"
               type="text"
               placeholder="Ваше полное имя"
               class="input-container_input"
               id="fullName"
+              required
             />
           </div>
           <div class="form_input-container">
             <img src="/assets/images/phone-unactive.png" width="30px" height="30px" class="phone-icon"></img>
             <input
-              type="text"
+              name="phone"
+              type="tel"
               placeholder="Ваш номер телефона"
               class="input-container_input"
               id="phone"
+              required
             />
           </div>
-          <button class="form_button">Отправить заявку</button>
+          <button type="submit" class="form_button">Отправить заявку</button>
           <div id="statusMessage" class="status"></div>
           <p class="user-agreement">Отправляя заявку, вы принимаете условия <span>пользовательского соглашения</span></p>
         </form>
@@ -1200,7 +1222,6 @@
   
 </footer>
 
-<!-- Кнопка "Наверх" -->
 <button class="scroll_top" id="scrollTop" aria-label="Наверх">
   <svg viewBox="0 0 24 24">
     <polyline points="18 15 12 9 6 15"/>
