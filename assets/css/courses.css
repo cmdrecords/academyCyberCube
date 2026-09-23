@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Montserrat Alternates";
   src: url(../fonts/MontserratAlternates-Medium.woff2) format(woff2);
@@ -279,9 +280,20 @@ body {
   align-items: center;
   gap: 10px;
 }
-.footer_course-price h3 {
-  text-decoration: line-through;
-  text-decoration-color: #7ef0c8;
+.footer_course-price h5 {
+  font-weight: 100;
+  position: relative;
+}
+.footer_course-price h5:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 45%;
+  width: 110%;
+  height: 3px;
+  background: red;
+  transform: rotate(-8deg); /* небольшой наклон для стиля */
+  border-radius: 2px;
 }
 .footer_course-price span {
   font-size: 18px;

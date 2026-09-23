@@ -11,8 +11,7 @@ $glowColor: rgba(126, 240, 126, 0.3);
 }
 
 @mixin neon-glow($color: $primaryColor, $intensity: 0.4) {
-  box-shadow:
-    0 0 20px rgba($color, $intensity),
+  box-shadow: 0 0 20px rgba($color, $intensity),
     0 0 40px rgba($color, $intensity * 0.6),
     0 0 80px rgba($color, $intensity * 0.3),
     inset 0 0 20px rgba($color, $intensity * 0.1);
@@ -62,22 +61,13 @@ body {
     left: -50%;
     width: 200%;
     height: 200%;
-    background:
-      radial-gradient(
+    background: radial-gradient(
         2px 2px at 20% 30%,
         rgba(126, 240, 126, 0.3),
         transparent
       ),
-      radial-gradient(
-        2px 2px at 40% 70%,
-        rgba(126, 240, 126, 0.2),
-        transparent
-      ),
-      radial-gradient(
-        2px 2px at 60% 20%,
-        rgba(126, 240, 126, 0.3),
-        transparent
-      ),
+      radial-gradient(2px 2px at 40% 70%, rgba(126, 240, 126, 0.2), transparent),
+      radial-gradient(2px 2px at 60% 20%, rgba(126, 240, 126, 0.3), transparent),
       radial-gradient(2px 2px at 80% 80%, rgba(126, 240, 126, 0.2), transparent);
     background-size: 200px 200px;
     animation: floatParticles 40s linear infinite;
@@ -92,8 +82,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background:
-      radial-gradient(
+    background: radial-gradient(
         circle at 20% 50%,
         rgba(126, 240, 126, 0.03) 0%,
         transparent 50%
@@ -335,9 +324,21 @@ body {
   align-items: center;
   gap: 10px;
 
-  h3 {
-    text-decoration: line-through;
-    text-decoration-color: #7ef0c8;
+  h5 {
+    font-weight: 100;
+    position: relative;
+  }
+
+  h5:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 45%;
+    width: 110%;
+    height: 3px;
+    background: red;
+    transform: rotate(-8deg); /* небольшой наклон для стиля */
+    border-radius: 2px;
   }
 
   span {
